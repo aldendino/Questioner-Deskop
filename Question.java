@@ -1,3 +1,5 @@
+import java.util.*;
+import java.io.*;
 
 public class Question {
     private String question;
@@ -33,5 +35,18 @@ public class Question {
 
     public boolean hasHint() {
         return hasHint();
+    }
+
+    public static ArrayList<Question> parse(File file) throws FileNotFoundException {
+        Scanner scanner = new Scanner(file);
+        ArrayList<Question> questionArray = new ArrayList<Question>();
+        while(true) {
+            if(!scanner.hasNextLine()) break;
+            String inputQuestion = scanner.nextLine();
+            if(!scanner.hasNextLine()) break;
+            String inputAnswer = scanner.nextLine();
+            questionArray.add(new Question(inputQuestion, inputAnswer));
+        }
+        return questionArray;
     }
 }   
