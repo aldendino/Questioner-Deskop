@@ -49,4 +49,10 @@ public class Question {
         }
         return questionArray;
     }
+
+    public static boolean isValidInput(String input) {
+        if(input.equals("")) return false;
+        else if(input.matches("^\\s+$")) return false;
+        else return true;
+    }
 }   
