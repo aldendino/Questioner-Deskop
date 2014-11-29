@@ -6,6 +6,8 @@ public class Questioner {
     private static final String PROMPT = "= ";
 
     private static final String GENERATE_COMMAND = "g";
+    private static final String NEXT_COMMAND = "n";
+    private static final String PREVIOUS_COMMAND = "p";
     private static final String QUESTION_COMMAND = "q";
     private static final String ANSWER_COMMAND = "a";
     private static final String HINT_COMMAND = "h";
@@ -15,6 +17,8 @@ public class Questioner {
     private static final String COMMAND_LIST
             = "Commands:\n"
             + "= " + GENERATE_COMMAND + " for generate\n"
+            + "= " + NEXT_COMMAND     + " for next\n"
+            + "= " + PREVIOUS_COMMAND + " for previous\n"
             + "= " + QUESTION_COMMAND + " for question\n"
             + "= " + ANSWER_COMMAND   + " for answer\n"
             + "= " + HINT_COMMAND     + " for hint\n"
@@ -60,6 +64,16 @@ public class Questioner {
                     currentQuestion = questions.get(index);
                     System.out.println(currentQuestion.getQuestion());
                 }
+                else if(command.equals(NEXT_COMMAND) && !commandScanner.hasNext()) {
+                    index = nextIndex(index, questions.size());
+                    currentQuestion = questions.get(index);
+                    System.out.println(currentQuestion.getQuestion());
+                }
+                else if(command.equals(PREVIOUS_COMMAND) && !commandScanner.hasNext()) {
+                    index = previousIndex(index, questions.size());
+                    currentQuestion = questions.get(index);
+                    System.out.println(currentQuestion.getQuestion());
+                }
                 else if(command.equals(QUESTION_COMMAND) && !commandScanner.hasNext()) {
                     System.out.println(currentQuestion.getQuestion()); 
                 }
@@ -86,6 +100,15 @@ public class Questioner {
                 }
             }
         }
+    }
+
+    private static int nextIndex(int index, int size) {
+        return (index + 1) % size;
+    }
+
+    private static int previousIndex(int index, int size) {
+        if((index - 1) < 0) return size - 1;
+        return index - 1;
     }
 }
 
