@@ -43,8 +43,10 @@ public class Question {
         while(true) {
             if(!scanner.hasNextLine()) break;
             String inputQuestion = scanner.nextLine();
+            if(!Question.isValidInput(inputQuestion)) continue;
             if(!scanner.hasNextLine()) break;
             String inputAnswer = scanner.nextLine();
+            if(!Question.isValidInput(inputAnswer)) continue;
             questionArray.add(new Question(inputQuestion, inputAnswer));
         }
         return questionArray;
