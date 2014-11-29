@@ -1,3 +1,4 @@
+
 import java.util.*;
 import java.io.*;
 
@@ -34,7 +35,7 @@ public class Question {
     }
 
     public boolean hasHint() {
-        return hasHint();
+        return hasHint;
     }
 
     public static ArrayList<Question> parse(File file) throws FileNotFoundException {
@@ -58,3 +59,4 @@ public class Question {
         else return true;
     }
 }   
+
