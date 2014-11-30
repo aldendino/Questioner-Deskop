@@ -10,8 +10,10 @@ import javax.swing.filechooser.*;
 public class QuestionerUI extends JFrame implements KeyListener {
 
     private final String FRAME_TITLE = "Questioner";
-    private final int FRAME_WIDTH = 450;
-    private final int FRAME_HEIGHT = 250;
+    private final int FRAME_WIDTH = 550;
+    private final int FRAME_HEIGHT = 350;
+    private final int MIN_FRAME_WIDTH = 450;
+    private final int MIN_FRAME_HEIGHT = 250;
 
     private final Color SHOW_COLOUR = Color.WHITE;
     private final Color HIDE_COLOUR = Color.DARK_GRAY;
@@ -55,7 +57,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(FRAME_WIDTH, FRAME_HEIGHT);
-        setMinimumSize(new Dimension(FRAME_WIDTH, FRAME_HEIGHT));
+        setMinimumSize(new Dimension(MIN_FRAME_WIDTH, MIN_FRAME_HEIGHT));
         setLocationByPlatform(true);
         setTitle(FRAME_TITLE);
         addKeyListener(this);
