@@ -43,7 +43,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
     private Question currentQuestion;
 
     private Random generator;
-    private int index;
+    private int index = 0;
 
     public QuestionerUI() {
         setupMainPanel();
@@ -118,7 +118,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         File workingDirectory = new File(System.getProperty("user.dir"));
         fileChooser.setCurrentDirectory(workingDirectory);
 
-
         loadButton = new JButton("Load");
         class loadButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
@@ -129,10 +128,10 @@ public class QuestionerUI extends JFrame implements KeyListener {
         loadButton.addKeyListener(this);
         buttonPanel.add(loadButton);
 
-        randomButton = new JButton("Random");
+        randomButton = new JButton("Generate");
         class randomButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                setIndex(generator.nextInt(questions.size()));    
+                setIndex(generate());    
             }
         }
         randomButton.addActionListener(new randomButtonListener());
@@ -180,7 +179,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         buttonPanel.add(hintButton);*/
 
         resetButton = new JButton("Reset");
-        resetButton.setMnemonic(KeyEvent.VK_R);
         class resetButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
                resetQuestion();
@@ -225,6 +223,20 @@ public class QuestionerUI extends JFrame implements KeyListener {
         } 
         else {
             //
+        }
+    }
+
+    private int generate() {
+        if(questions.size() > 1) {
+            int last = index;
+            int next = generator.nextInt(questions.size());
+            while(next == last) {
+                next = generator.nextInt(questions.size());
+            }
+            return next;
+        }
+        else {
+            return generator.nextInt(questions.size());
         }
     }
 
