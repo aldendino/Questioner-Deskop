@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
+import javax.swing.filechooser.*;
 
 public class QuestionerUI extends JFrame implements KeyListener {
 
@@ -117,6 +118,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         fileChooser = new JFileChooser();
         File workingDirectory = new File(System.getProperty("user.dir"));
         fileChooser.setCurrentDirectory(workingDirectory);
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+        fileChooser.setFileFilter(new FileNameExtensionFilter("Questioner files only","qnr"));
 
         loadButton = new JButton("Load");
         class loadButtonListener implements ActionListener {
