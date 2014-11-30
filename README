@@ -14,6 +14,13 @@ Contents of .gitignore
 *.jar
 
 
+Jar
+---
+
+./jarer.sh
+java -jar Questioner.jar
+
+
 To implement
 ------------
 
