@@ -2,3 +2,11 @@ Questioner
 ----------
 
 Quiz yourself on anything!
+
+--------------------------
+
+To implement
+------------
+- JFileChooser needs KeyListener for searching files by typing
+- save progress and try to load on startup
+- go to question by index
