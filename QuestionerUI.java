@@ -13,20 +13,23 @@ public class QuestionerUI extends JFrame implements KeyListener {
     private final int FRAME_HEIGHT = 250;
 
     private final Color SHOW_COLOUR = Color.WHITE;
-    private final Color HIDE_COLOUR = Color.LIGHT_GRAY;
+    private final Color HIDE_COLOUR = Color.DARK_GRAY;
     private final Insets TEXT_INSETS = new Insets(5, 5, 5, 5);
     private final EmptyBorder EMPTY_BORDER = new EmptyBorder(TEXT_INSETS);
 
     private JFileChooser fileChooser;
 
     private JPanel mainPanel;
-    private JPanel questionPanel;
+    private JSplitPane questionSplitPane;
     private JPanel buttonPanel;
     private JScrollPane buttonPane;
 
     private JTextArea questionText;
     private JTextArea answerText;
-    private JTextArea hintText;
+    //private JTextArea hintText;
+    private JScrollPane questionScrollPane;
+    private JScrollPane answerScrollPane;
+    //private JScrollPane hintScrollPane;
 
     private JButton loadButton;
     private JButton randomButton;
@@ -62,41 +65,46 @@ public class QuestionerUI extends JFrame implements KeyListener {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
 
-        setupQuestionPanel();
-        mainPanel.add(questionPanel, BorderLayout.CENTER);
+        setupQuestionPane();
+        mainPanel.add(questionSplitPane, BorderLayout.CENTER);
 
         setupButtonPanel();
         mainPanel.add(buttonPane, BorderLayout.EAST);
     }
 
-    private void setupQuestionPanel() {
-        questionPanel = new JPanel();
-        questionPanel.setLayout(new GridLayout(3, 1));
-        questionPanel.setBorder(EMPTY_BORDER);
+    private void setupQuestionPane() {
+        Dimension textDimension = new Dimension(100, 100);
 
         questionText = new JTextArea();
+        questionText.setMinimumSize(textDimension);
         questionText.setBorder(EMPTY_BORDER);
         questionText.setEditable(false);
         questionText.setLineWrap(true);
         questionText.setWrapStyleWord(true);
         questionText.addKeyListener(this);
-        questionPanel.add(questionText);
+        questionScrollPane = new JScrollPane(questionText);
+        questionScrollPane.setMinimumSize(textDimension);
 
         answerText = new JTextArea();
+        answerText.setMinimumSize(textDimension);
         answerText .setBorder(EMPTY_BORDER);
         answerText.setEditable(false);
         answerText.setLineWrap(true);
         answerText.setWrapStyleWord(true);
         answerText.addKeyListener(this);
-        questionPanel.add(answerText);
+        answerScrollPane = new JScrollPane(answerText);
+        answerScrollPane.setMinimumSize(textDimension);
 
-        hintText = new JTextArea();
+        /*hintText = new JTextArea();
         hintText.setBorder(EMPTY_BORDER);
         hintText.setEditable(false);
         hintText.setLineWrap(true);
         hintText.setWrapStyleWord(true);
         hintText.addKeyListener(this);
-        questionPanel.add(hintText);
+        hintScrollPane = new JScrollPane(hintText);*/
+        
+        questionSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, questionScrollPane, answerScrollPane);
+        questionSplitPane.setBorder(EMPTY_BORDER);
     }
 
     private void setupButtonPanel() {
@@ -104,8 +112,12 @@ public class QuestionerUI extends JFrame implements KeyListener {
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
         buttonPane = new JScrollPane(buttonPanel);
 
-        fileChooser = new JFileChooser();
         generator = new Random();
+
+        fileChooser = new JFileChooser();
+        File workingDirectory = new File(System.getProperty("user.dir"));
+        fileChooser.setCurrentDirectory(workingDirectory);
+
 
         loadButton = new JButton("Load");
         class loadButtonListener implements ActionListener {
@@ -157,7 +169,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
         answerButton.addKeyListener(this);
         buttonPanel.add(answerButton);
 
-        hintButton = new JButton("Hint");
+        /*hintButton = new JButton("Hint");
         class hintButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
                showHint();
@@ -165,7 +177,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         hintButton.addActionListener(new hintButtonListener());
         hintButton.addKeyListener(this);
-        buttonPanel.add(hintButton);
+        buttonPanel.add(hintButton);*/
 
         resetButton = new JButton("Reset");
         resetButton.setMnemonic(KeyEvent.VK_R);
@@ -186,7 +198,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
        nextButton.setEnabled(enabled);
        previousButton.setEnabled(enabled);
        answerButton.setEnabled(enabled);
-       hintButton.setEnabled(enabled);
+       //hintButton.setEnabled(enabled);
        resetButton.setEnabled(enabled);
     }
 
@@ -195,9 +207,16 @@ public class QuestionerUI extends JFrame implements KeyListener {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             try {
-                questions = Question.parse(file);
-                enableButtons(true);
-                setIndex(generator.nextInt(questions.size()));
+                ArrayList<Question> importedQuestions = Question.parse(file);
+                if(importedQuestions.size() > 0) {
+                    questions = importedQuestions;
+                    setTitle(FRAME_TITLE + " - " + file.getName());
+                    enableButtons(true);
+                    setIndex(0);
+                }
+                else {
+                    JOptionPane.showMessageDialog(this, "File does not contain parseable questions!", "File unparseable!", JOptionPane.ERROR_MESSAGE);
+                }
             }
             catch(FileNotFoundException fnfe) {
                 fnfe.printStackTrace();
@@ -215,7 +234,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
             if(index < 0 || index >= questions.size()) return false;
             currentQuestion = questions.get(index);
             clearQuestion();
-            questionText.setText(currentQuestion.getQuestion());
+            questionText.setText((index + 1) + ". " + currentQuestion.getQuestion());
             return true;
         }
         else return false;
@@ -226,7 +245,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
         answerText.setBackground(SHOW_COLOUR);
     }
 
-    private void showHint() {
+    /*private void showHint() {
         if(currentQuestion.hasHint()) {
             hintText.setText(currentQuestion.getHint());
         }
@@ -234,7 +253,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
             hintText.setText("No hint");
         }
         hintText.setBackground(SHOW_COLOUR);
-    }
+    }*/
 
     private void clearQuestion() {
         resetQuestion();
@@ -243,9 +262,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
 
     private void resetQuestion() {
         answerText.setText("");
-        hintText.setText("");
+        //hintText.setText("");
         answerText.setBackground(HIDE_COLOUR);
-        hintText.setBackground(HIDE_COLOUR);
+        //hintText.setBackground(HIDE_COLOUR);
     }
 
     private void setIndex(int location) {
@@ -277,18 +296,26 @@ public class QuestionerUI extends JFrame implements KeyListener {
         else if(keyCode == KeyEvent.VK_G) {
             randomButton.doClick() ;
         }
-        else if(keyCode == KeyEvent.VK_N) {
+        else if(keyCode == KeyEvent.VK_N
+                || keyCode == KeyEvent.VK_RIGHT
+                || keyCode == KeyEvent.VK_KP_RIGHT
+                || keyCode == KeyEvent.VK_DOWN
+                || keyCode == KeyEvent.VK_KP_DOWN) {
             nextButton.doClick() ;
         }
-        else if(keyCode == KeyEvent.VK_P) {
+        else if(keyCode == KeyEvent.VK_P
+                || keyCode == KeyEvent.VK_LEFT
+                || keyCode == KeyEvent.VK_KP_LEFT
+                || keyCode == KeyEvent.VK_UP
+                || keyCode == KeyEvent.VK_KP_UP) {
             previousButton.doClick() ;
         }
         else if(keyCode == KeyEvent.VK_A) {
             answerButton.doClick() ;
         }
-        else if(keyCode == KeyEvent.VK_H) {
+        /*else if(keyCode == KeyEvent.VK_H) {
             hintButton.doClick() ;
-        }
+        }*/
         else if(keyCode == KeyEvent.VK_R) {
             resetButton.doClick() ;
         }
