@@ -1,0 +1,32 @@
+
+What is SEO (Search Engine Optimization)?
+SEO is the practise of improving and promoting a website in order to increase the number of visitors the site receives from search engines.
+
+What are two broad categories of SEO (Search Engine Optimization)?
+1. White hat SEO - techniques that search engines recommend as part of good design, and 2. Techniques of which search engines do not approve.
+
+What is the difference between the results that white hat SEO tends to produce versus the type that black hat SEO produces?
+White hats tend to produce results that last a long time, whereas black hats anticipate that their sites may eventually be banned either temporarily or permanently once the search engines discover what they are doing.
+
+Describe White Hat SEO.
+White hat advice is generally summed up as creating content for users, not for search engines, and then making that content easily accessible to the spiders, rather than attempting to trick the algorithm from its intended purpose.
+
+Describe Black Hat SEO.
+Black hat SEO attempts to improve rankings in ways that are disapproved of by the search engines, or involve deception. One black hat technique uses text that is hidden, either as text coloured similar to the background, in an invisible div, or positioned off screen.
+
+What is Website Monetization?
+Website monetization is the process of converting existing traffic being sent to a particular website into revenue. The most popular ways of monetizing a website are by implementing Pay per click (PPC) and Cost per impression (CPI/CPM) advertising. Various ad networks facilitate a webmaster in placing advertisements on pages of the website to benefit from the traffic the site is experiencing.
+
+What is Pay per click (also called Cost per click)?
+Pay per click (also called Cost per click) is a marketing strategy put in place by search engines and various Advertising networks, where an advert, usually targeted by keywords or general topic, is placed on a relevant website. The advertiser then pays for every click that is made on the advert.
+
+What is Cost per impression (also called Cost per mille)
+Cost per impression (also called Cost per mille) is a strategy where an advert is placed on a relevant website, usually targeted to the content sector of that site. The advertiser then pays for every time the advert is displayed to a user.
+
+What are Affiliate Programs?
+Affiliate programs are another popular way of monetizing existing website traffic. By joining a business' affiliate program, any searches for products within that business' catalog may earn affiliates a commission on each sale that was originally referred through their website.
+
+What is Banner Advertising?
+Banner advertising consists of placing a graphical banner advertisement on a webpage. The role of this banner is to catch the eye of incoming traffic to the page, enticing readers to click the advertisement.
+
+
