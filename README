@@ -5,8 +5,20 @@ Quiz yourself on anything!
 
 --------------------------
 
+Contents of .gitignore
+----------------------
+
+*~
+.*
+*.class
+*.jar
+
+
 To implement
 ------------
+
 - JFileChooser needs KeyListener for searching files by typing
 - save progress and try to load on startup
 - go to question by index
+
+
