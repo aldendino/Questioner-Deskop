@@ -63,6 +63,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
         setMinimumSize(new Dimension(MIN_FRAME_WIDTH, MIN_FRAME_HEIGHT));
         setLocationByPlatform(true);
         setTitle(FRAME_TITLE);
+		setIcon();
         addKeyListener(this);
         setVisible(true);
     }
