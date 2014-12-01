@@ -1,3 +1,3 @@
 #!/bin/bash
 javac *.java
-jar cfm Questioner.jar questionerManifest.txt *.class
+jar cfm Questioner.jar questionerManifest.txt *.class Media

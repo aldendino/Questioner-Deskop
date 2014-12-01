@@ -12,6 +12,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
     private final String FRAME_TITLE = "Questioner";
     private final String EXTENSION = "qnr";
 
+    private ImageIcon icon ;
+    private final String iconPath = "/Media/Images/Questioner.png" ;
+
     private final int FRAME_WIDTH = 550;
     private final int FRAME_HEIGHT = 350;
     private final int MIN_FRAME_WIDTH = 450;
@@ -62,6 +65,11 @@ public class QuestionerUI extends JFrame implements KeyListener {
         setTitle(FRAME_TITLE);
         addKeyListener(this);
         setVisible(true);
+    }
+
+    private void setIcon() {
+        icon = new ImageIcon(getClass().getResource(iconPath)) ;
+        setIconImage(icon.getImage()) ;
     }
 
     private void setupMainPanel() {
