@@ -10,6 +10,8 @@ import javax.swing.filechooser.*;
 public class QuestionerUI extends JFrame implements KeyListener {
 
     private final String FRAME_TITLE = "Questioner";
+    private final String EXTENSION = "qnr";
+
     private final int FRAME_WIDTH = 550;
     private final int FRAME_HEIGHT = 350;
     private final int MIN_FRAME_WIDTH = 450;
@@ -71,7 +73,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
         setupQuestionPane();
         mainPanel.add(questionSplitPane, BorderLayout.CENTER);
 
-        setupButtonPanel();
+        setupButtonPane();
         mainPanel.add(buttonPane, BorderLayout.EAST);
     }
 
@@ -107,12 +109,11 @@ public class QuestionerUI extends JFrame implements KeyListener {
         hintScrollPane = new JScrollPane(hintText);*/
         
         questionSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, questionScrollPane, answerScrollPane);
-        questionSplitPane.setBorder(EMPTY_BORDER);
     }
 
-    private void setupButtonPanel() {
+    private void setupButtonPane() {
         buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
+        buttonPanel.setLayout(new GridBagLayout());
         buttonPane = new JScrollPane(buttonPanel);
 
         generator = new Random();
@@ -121,7 +122,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
         File workingDirectory = new File(System.getProperty("user.dir"));
         fileChooser.setCurrentDirectory(workingDirectory);
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChooser.setFileFilter(new FileNameExtensionFilter("Questioner files only","qnr"));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("Questioner files only" ,EXTENSION));
 
         loadButton = new JButton("Load");
         class loadButtonListener implements ActionListener {
@@ -131,7 +132,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         loadButton.addActionListener(new loadButtonListener());
         loadButton.addKeyListener(this);
-        buttonPanel.add(loadButton);
 
         randomButton = new JButton("Generate");
         class randomButtonListener implements ActionListener {
@@ -141,7 +141,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         randomButton.addActionListener(new randomButtonListener());
         randomButton.addKeyListener(this);
-        buttonPanel.add(randomButton);
 
         nextButton = new JButton("Next");
         class nextButtonListener implements ActionListener {
@@ -151,7 +150,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         nextButton.addActionListener(new nextButtonListener());
         nextButton.addKeyListener(this);
-        buttonPanel.add(nextButton);
 
         previousButton = new JButton("Previous");
         class previousButtonListener implements ActionListener {
@@ -161,7 +159,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         previousButton.addActionListener(new previousButtonListener());
         previousButton.addKeyListener(this);
-        buttonPanel.add(previousButton);
 
         answerButton = new JButton("Answer");
         class answerButtonListener implements ActionListener {
@@ -171,7 +168,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         answerButton.addActionListener(new answerButtonListener());
         answerButton.addKeyListener(this);
-        buttonPanel.add(answerButton);
 
         /*hintButton = new JButton("Hint");
         class hintButtonListener implements ActionListener {
@@ -191,7 +187,26 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         resetButton.addActionListener(new resetButtonListener());
         resetButton.addKeyListener(this);
-        buttonPanel.add(resetButton);
+        
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.anchor = GridBagConstraints.NORTHWEST;
+        gbc.gridx = 0;
+        gbc.gridy = 0;
+        gbc.weighty = 0;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+
+        buttonPanel.add(loadButton, gbc);
+        gbc.gridy++;
+        buttonPanel.add(randomButton, gbc);
+        gbc.gridy++;
+        buttonPanel.add(nextButton, gbc);
+        gbc.gridy++;
+        buttonPanel.add(previousButton, gbc);
+        gbc.gridy++;
+        buttonPanel.add(answerButton, gbc);
+        gbc.gridy++;
+        gbc.weighty = 1;
+        buttonPanel.add(resetButton, gbc);
 
         enableButtons(false);
     }
