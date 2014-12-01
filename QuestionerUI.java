@@ -44,11 +44,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
     private JButton hintButton;
     private JButton resetButton;
 
-    private ArrayList<Question> questions;
+    private QuestionManager qm;
     private Question currentQuestion;
 
-    private Random generator;
-    private int index = 0;
 
     public QuestionerUI() {
         setupMainPanel();
@@ -116,8 +114,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         buttonPanel.setLayout(new GridBagLayout());
         buttonPane = new JScrollPane(buttonPanel);
 
-        generator = new Random();
-
         fileChooser = new JFileChooser();
         File workingDirectory = new File(System.getProperty("user.dir"));
         fileChooser.setCurrentDirectory(workingDirectory);
@@ -136,7 +132,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         randomButton = new JButton("Generate");
         class randomButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                setIndex(generate());    
+                qm.generate();
+                setQuestion();
             }
         }
         randomButton.addActionListener(new randomButtonListener());
@@ -145,7 +142,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         nextButton = new JButton("Next");
         class nextButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                setIndex(nextIndex());
+                qm.nextIndex();
+                setQuestion();
             }
         }
         nextButton.addActionListener(new nextButtonListener());
@@ -154,7 +152,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         previousButton = new JButton("Previous");
         class previousButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                setIndex(previousIndex());
+                qm.previousIndex();
+                setQuestion();
             }
         }
         previousButton.addActionListener(new previousButtonListener());
@@ -227,10 +226,10 @@ public class QuestionerUI extends JFrame implements KeyListener {
             try {
                 ArrayList<Question> importedQuestions = Question.parse(file);
                 if(importedQuestions.size() > 0) {
-                    questions = importedQuestions;
+                    qm = new QuestionManager(importedQuestions);
+                    boolean success = setQuestion();
                     setTitle(FRAME_TITLE + " - " + file.getName());
-                    enableButtons(true);
-                    setIndex(0);
+                    if(success) enableButtons(true);
                 }
                 else {
                     JOptionPane.showMessageDialog(this, "File does not contain parseable questions!", "File unparseable!", JOptionPane.ERROR_MESSAGE);
@@ -246,34 +245,18 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
     }
 
-    private int generate() {
-        if(questions.size() > 1) {
-            int last = index;
-            int next = generator.nextInt(questions.size());
-            while(next == last) {
-                next = generator.nextInt(questions.size());
-            }
-            return next;
-        }
-        else {
-            return generator.nextInt(questions.size());
-        }
-    }
-
-    private boolean setQuestion(int index) {
-        if(questions != null) {
-            if(questions.size() == 0) return false;
-            if(index < 0 || index >= questions.size()) return false;
-            currentQuestion = questions.get(index);
+    private boolean setQuestion() {
+        if(qm != null) {
+            if(qm.isEmpty()) return false;
             clearQuestion();
-            questionText.setText((index + 1) + ". " + currentQuestion.getQuestion());
+            questionText.setText((qm.getIndex() + 1) + ". " + qm.getCurrentQuestion().getQuestion());
             return true;
         }
         else return false;
     }
 
     private void showAnswer() {
-        answerText.setText(currentQuestion.getAnswer());
+        answerText.setText(qm.getCurrentQuestion().getAnswer());
         answerText.setBackground(SHOW_COLOUR);
     }
 
@@ -297,22 +280,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
         //hintText.setText("");
         answerText.setBackground(HIDE_COLOUR);
         //hintText.setBackground(HIDE_COLOUR);
-    }
-
-    private void setIndex(int location) {
-        index = location;
-        setQuestion(index);
-    }
-
-    private int nextIndex() {
-        int size = questions.size();
-        return (index + 1) % size;
-    }
-
-    private int previousIndex() {
-        int size = questions.size();
-        if((index - 1) < 0) return size - 1;
-        else return index - 1;
     }
 
     public void keyPressed(KeyEvent keyEvent) 
