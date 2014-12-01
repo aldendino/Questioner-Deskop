@@ -29,4 +29,10 @@ To implement
 - go to question by index
 - rank for questions based on importance of content for use with filters based on how much you want to study
 - open folders with enter key
+- Question manager
+- Question entry/edit interface
+- Multiple types of questions (ex. mc)
+- Ability to mark yourself
+- icon (question mark)
+- pretty graphics
 
