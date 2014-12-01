@@ -28,4 +28,5 @@ To implement
 - save progress and try to load on startup
 - go to question by index
 - rank for questions based on importance of content for use with filters based on how much you want to study
+- open folders with enter key
 
