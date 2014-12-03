@@ -7,56 +7,63 @@ import java.awt.event.*;
 import javax.swing.border.*;
 import javax.swing.filechooser.*;
 
+/**
+ * The user interface to the Question Manager.
+ */
 public class QuestionerUI extends JFrame implements KeyListener {
 
-    private final String FRAME_TITLE = "Questioner";
-    private final String EXTENSION = "qnr";
+    private final String FRAME_TITLE = "Questioner"; // The title of the application
+    private final String EXTENSION = "qnr"; // The file extension for Questioner database files.
 
-    private ImageIcon icon ;
-    private final String iconPath = "/Media/Images/Icons/Questioner.png" ;
+    private ImageIcon icon ; // The icon for the application.
+    private final String iconPath = "/Media/Images/Icons/Questioner.png" ; // The path to the icon.
 
-    private final int FRAME_WIDTH = 550;
-    private final int FRAME_HEIGHT = 350;
-    private final int MIN_FRAME_WIDTH = 450;
-    private final int MIN_FRAME_HEIGHT = 250;
+    private final int FRAME_WIDTH = 550; // The default width of the application.
+    private final int FRAME_HEIGHT = 350; // The default height of the application.
+    private final int MIN_FRAME_WIDTH = 450; // The minimum width of the application.
+    private final int MIN_FRAME_HEIGHT = 250; // The minimum height of the application.
 
-    private final Color SHOW_COLOUR = Color.WHITE;
-    private final Color HIDE_COLOUR = Color.DARK_GRAY;
-    private final Insets TEXT_INSETS = new Insets(5, 5, 5, 5);
-    private final EmptyBorder EMPTY_BORDER = new EmptyBorder(TEXT_INSETS);
+    private final Color SHOW_COLOUR = Color.WHITE; // The background colour of an element that is being shown.
+    private final Color HIDE_COLOUR = Color.DARK_GRAY; // The background colour of an element that is being hidden.
+    private final Insets TEXT_INSETS = new Insets(5, 5, 5, 5); // The inset for text.
+    private final EmptyBorder EMPTY_BORDER = new EmptyBorder(TEXT_INSETS); // The EmptyBorder for text.
 
-    private JFileChooser fileChooser;
+    private JFileChooser fileChooser; // The file chooser.
 
-    private JPanel mainPanel;
-    private JSplitPane questionSplitPane;
-    private JPanel buttonPanel;
-    private JScrollPane buttonPane;
+    private JPanel mainPanel; // The main panel.
+    private JSplitPane questionSplitPane; // The pane that holds the question and answer texts.
+    private JPanel buttonPanel; // The button panel.
+    private JScrollPane buttonPane; // The pane for button panel scrolling.
 
-    private JTextArea questionText;
-    private JTextArea answerText;
-    //private JTextArea hintText;
-    private JScrollPane questionScrollPane;
-    private JScrollPane answerScrollPane;
-    //private JScrollPane hintScrollPane;
+    private JTextArea questionText; // The question text.
+    private JTextArea answerText; // The answer text.
+    //private JTextArea hintText; // The hint text.
+    private JScrollPane questionScrollPane; // The pane for question text scrolling.
+    private JScrollPane answerScrollPane; // The pane for answer text scrolling.
+    //private JScrollPane hintScrollPane; // The pane for hint text scrolling.
 
-    private JButton loadButton;
-    private JButton randomButton;
-    private JButton nextButton;
-    private JButton previousButton;
-    private JButton answerButton;
-    private JButton hintButton;
-    private JButton resetButton;
+    private JButton loadButton; // The load button.
+    private JButton randomButton; // The random button.
+    private JButton nextButton; // The next button.
+    private JButton previousButton; // The previous button.
+    private JButton answerButton; // The answer button.
+    private JButton hintButton; // The hint button.
+    private JButton resetButton; // The reset button.
 
-    private QuestionManager qm;
-    private Question currentQuestion;
+    private QuestionManager qm; // The question manager.
 
-
+    /**
+     * Set up the user interface.
+     */
     public QuestionerUI() {
         setupMainPanel();
         add(mainPanel);
         init();
     }
 
+    /**
+     * Initialize the frame and its subcomponents.
+     */
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(FRAME_WIDTH, FRAME_HEIGHT);
@@ -68,6 +75,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
         setVisible(true);
     }
 
+    /**
+     * Set the icon.
+     */
     private void setIcon() {
         try {
             icon = new ImageIcon(getClass().getResource(iconPath));
@@ -78,6 +88,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
     }
 
+    /**
+     * Setup the main panel.
+     */
     private void setupMainPanel() {
         mainPanel = new JPanel();
         mainPanel.setLayout(new BorderLayout());
@@ -89,6 +102,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
         mainPanel.add(buttonPane, BorderLayout.EAST);
     }
 
+    /**
+     * Setup the question panel.
+     */
     private void setupQuestionPane() {
         Dimension textDimension = new Dimension(100, 100);
 
@@ -123,6 +139,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
         questionSplitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, questionScrollPane, answerScrollPane);
     }
 
+    /**
+     * Setup the button panel.
+     */
     private void setupButtonPane() {
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridBagLayout());
@@ -146,8 +165,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         randomButton = new JButton("Generate");
         class randomButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                qm.generate();
-                setQuestion();
+                qm.generateIndex(); // Generate a random index.
+                setQuestion(); // Apply it.
             }
         }
         randomButton.addActionListener(new randomButtonListener());
@@ -156,8 +175,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         nextButton = new JButton("Next");
         class nextButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                qm.nextIndex();
-                setQuestion();
+                qm.nextIndex(); // Go to the next index.
+                setQuestion(); // Apply it.
             }
         }
         nextButton.addActionListener(new nextButtonListener());
@@ -166,8 +185,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         previousButton = new JButton("Previous");
         class previousButtonListener implements ActionListener {
             public void actionPerformed(ActionEvent event) {
-                qm.previousIndex();
-                setQuestion();
+                qm.previousIndex(); // Go to the previous index.
+                setQuestion(); // Apply it.
             }
         }
         previousButton.addActionListener(new previousButtonListener());
@@ -221,9 +240,13 @@ public class QuestionerUI extends JFrame implements KeyListener {
         gbc.weighty = 1;
         buttonPanel.add(resetButton, gbc);
 
-        enableButtons(false);
+        enableButtons(false); // Buttons should be disabled initially.
     }
 
+    /**
+     * Enable or disable all the buttons except the load button.
+     * @param enabled whether the buttons should be enabled or not.
+     */
     private void enableButtons(boolean enabled) {
        randomButton.setEnabled(enabled);
        nextButton.setEnabled(enabled);
@@ -233,6 +256,9 @@ public class QuestionerUI extends JFrame implements KeyListener {
        resetButton.setEnabled(enabled);
     }
 
+    /**
+     * Load a file based on user input.
+     */
     private void loadFile() {
         int returnVal = fileChooser.showOpenDialog(this);
         if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -255,10 +281,14 @@ public class QuestionerUI extends JFrame implements KeyListener {
             }
         } 
         else {
-            //
+            // Do something if the user did not choose the approve option.
         }
     }
 
+    /**
+     * Set the question to the current question in the question manager.
+     * @return whether or not the question was set successfully.
+     */
     private boolean setQuestion() {
         if(qm != null) {
             if(qm.isEmpty()) return false;
@@ -269,11 +299,17 @@ public class QuestionerUI extends JFrame implements KeyListener {
         else return false;
     }
 
+    /**
+     * Show the answer.
+     */
     private void showAnswer() {
         answerText.setText(qm.getCurrentQuestion().getAnswer());
         answerText.setBackground(SHOW_COLOUR);
     }
 
+    /**
+     * Show the hint.
+     */
     /*private void showHint() {
         if(currentQuestion.hasHint()) {
             hintText.setText(currentQuestion.getHint());
@@ -284,11 +320,17 @@ public class QuestionerUI extends JFrame implements KeyListener {
         hintText.setBackground(SHOW_COLOUR);
     }*/
 
+    /**
+     * Clear the question.
+     */
     private void clearQuestion() {
         resetQuestion();
         questionText.setText("");
     }
 
+    /**
+     * Reset the current question so that the answer is hidden.
+     */
     private void resetQuestion() {
         answerText.setText("");
         //hintText.setText("");
@@ -296,6 +338,10 @@ public class QuestionerUI extends JFrame implements KeyListener {
         //hintText.setBackground(HIDE_COLOUR);
     }
 
+    /**
+     * Implement the KeyListener interface for keyboard shortcuts for the buttons.
+     * @param keyEvent the key that was pressed.
+     */
     public void keyPressed(KeyEvent keyEvent) 
     {
         int keyCode = keyEvent.getKeyCode() ;
@@ -334,13 +380,21 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
     }
 
+    /**
+     * Not used.
+     * @param keyEvent keyEvent the key that was released.
+     */
     public void keyReleased(KeyEvent keyEvent)
     {
-        //
+        // Do something after a key is released.
     }
 
+    /**
+     * Not used.
+     * @param keyEvent keyEvent the key that was typed.
+     */
     public void keyTyped(KeyEvent keyEvent)
     {
-        //
+        // Do something after a key has been typed.
     }
 }

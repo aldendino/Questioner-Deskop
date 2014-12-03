@@ -30,6 +30,25 @@ Contents of .gitignore
 Jar
 ---
 
+Use the bash script jarer.sh (see below) or use the IntelliJ IDEA artifact
+
+jarer.sh
+========
+
+#!/bin/bash
+javac *.java
+jar cfm Questioner.jar questionerManifest.txt *.class Media
+
+========
+
+questionerManifest.txt
+======================
+
+Main-Class: QuestionerUIDriver
+
+
+======================
+
 ./jarer.sh
 java -jar Questioner.jar
 
