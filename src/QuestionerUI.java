@@ -369,25 +369,25 @@ public class QuestionerUI extends JFrame implements KeyListener {
         }
         else if(keyCode == KeyEvent.VK_N
                 || keyCode == KeyEvent.VK_RIGHT
-                || keyCode == KeyEvent.VK_KP_RIGHT
-                || keyCode == KeyEvent.VK_DOWN
-                || keyCode == KeyEvent.VK_KP_DOWN) {
+                || keyCode == KeyEvent.VK_KP_RIGHT) {
             nextButton.doClick() ;
         }
         else if(keyCode == KeyEvent.VK_P
                 || keyCode == KeyEvent.VK_LEFT
-                || keyCode == KeyEvent.VK_KP_LEFT
-                || keyCode == KeyEvent.VK_UP
-                || keyCode == KeyEvent.VK_KP_UP) {
+                || keyCode == KeyEvent.VK_KP_LEFT) {
             previousButton.doClick() ;
         }
-        else if(keyCode == KeyEvent.VK_A) {
+        else if(keyCode == KeyEvent.VK_A
+                || keyCode == KeyEvent.VK_UP
+                || keyCode == KeyEvent.VK_KP_UP) {
             answerButton.doClick() ;
         }
         /*else if(keyCode == KeyEvent.VK_H) {
             hintButton.doClick() ;
         }*/
-        else if(keyCode == KeyEvent.VK_R) {
+        else if(keyCode == KeyEvent.VK_R
+                || keyCode == KeyEvent.VK_DOWN
+                || keyCode == KeyEvent.VK_KP_DOWN) {
             resetButton.doClick() ;
         }
     }
