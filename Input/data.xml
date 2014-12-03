@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>Question 1</question>
+        <answer>Answer 1</answer>
+    </question-type>
+    <question-type>
+        <question>Question 2</question>
+        <answer>Answer 2</answer>
+    </question-type>
+    <question-type>
+        <question>Question 3</question>
+        <answer>Answer 3</answer>
+    </question-type>
+    <question-type>
+        <question>Question 4</question>
+        <answer>Answer 4</answer>
+    </question-type>
+</questions>

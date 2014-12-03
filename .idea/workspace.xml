@@ -383,7 +383,11 @@
       <created>1417589448676</created>
       <updated>1417589448676</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Switched to xml for data files.">
+      <created>1417590308018</created>
+      <updated>1417590308018</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
