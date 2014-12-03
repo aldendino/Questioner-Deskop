@@ -279,10 +279,6 @@ public class QuestionerUI extends JFrame implements KeyListener {
                     JOptionPane.showMessageDialog(this, "File does not contain parseable questions!", "File unparseable!", JOptionPane.ERROR_MESSAGE);
                 }
             }
-            /*catch(FileNotFoundException fnfe) {
-                fnfe.printStackTrace();
-                JOptionPane.showMessageDialog(this, "File not found!", "File not found!", JOptionPane.ERROR_MESSAGE);
-            }*/
             catch(IOException ioe) {
                 ioe.printStackTrace();
                 JOptionPane.showMessageDialog(this, "File parsing error.", "IOException", JOptionPane.ERROR_MESSAGE);

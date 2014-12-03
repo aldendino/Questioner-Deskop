@@ -1,4 +1,8 @@
 
+import org.xml.sax.SAXException;
+
+import javax.swing.*;
+import javax.xml.parsers.ParserConfigurationException;
 import java.util.*;
 import java.io.*;
 
@@ -45,10 +49,22 @@ public class Questioner {
 
         String filename = args[0];
         try {
-            questions = Question.parse(new File(filename));
+            questions = Question.parseXML(new File(filename));
         }
         catch(FileNotFoundException fnfe) {
             System.out.println("File not found: " + filename);
+            System.exit(1);
+        }
+        catch(IOException ioe) {
+            System.out.println("File could not be read: " + filename);
+            System.exit(1);
+        }
+        catch(ParserConfigurationException pce) {
+            System.out.println("File could not be parsed: " + filename);
+            System.exit(1);
+        }
+        catch(SAXException se) {
+            System.out.println("File could not be parsed: " + filename);
             System.exit(1);
         }
 

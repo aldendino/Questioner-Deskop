@@ -87,27 +87,6 @@ public class Question {
     }
 
     /**
-     * Parse a file for question and answer pairs.
-     * @param file the file to parse.
-     * @return an ArrayList of the questions parsed from the file.
-     * @throws FileNotFoundException if the file does not exist in the current directory.
-     */
-    public static ArrayList<Question> parse(File file) throws FileNotFoundException {
-        Scanner scanner = new Scanner(file);
-        ArrayList<Question> questionArray = new ArrayList<Question>();
-        while(true) {
-            if(!scanner.hasNextLine()) break;
-            String inputQuestion = scanner.nextLine();
-            if(!Question.isValidInput(inputQuestion)) continue;
-            if(!scanner.hasNextLine()) break;
-            String inputAnswer = scanner.nextLine();
-            if(!Question.isValidInput(inputAnswer)) continue;
-            questionArray.add(new Question(inputQuestion, inputAnswer));
-        }
-        return questionArray;
-    }
-
-    /**
      * Parse a file for question, answer, and possibly hint tuple.
      * @param file the XML file to parse.
      * @return an ArrayList of the questions parsed from the XML file.
