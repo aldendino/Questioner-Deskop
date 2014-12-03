@@ -1,4 +1,6 @@
 
+import org.xml.sax.SAXException;
+
 import java.util.*;
 import java.io.*;
 import javax.swing.*;
@@ -6,6 +8,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.border.*;
 import javax.swing.filechooser.*;
+import javax.xml.parsers.ParserConfigurationException;
 
 /**
  * The user interface to the Question Manager.
@@ -13,7 +16,7 @@ import javax.swing.filechooser.*;
 public class QuestionerUI extends JFrame implements KeyListener {
 
     private final String FRAME_TITLE = "Questioner"; // The title of the application
-    private final String EXTENSION = "qnr"; // The file extension for Questioner database files.
+    private final String EXTENSION = "xml"; // The file extension for Questioner database files.
 
     private ImageIcon icon ; // The icon for the application.
     private final String iconPath = "/Media/Images/Icons/Questioner.png" ; // The path to the icon.
@@ -151,7 +154,7 @@ public class QuestionerUI extends JFrame implements KeyListener {
         File workingDirectory = new File(System.getProperty("user.dir"));
         fileChooser.setCurrentDirectory(workingDirectory);
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        fileChooser.setFileFilter(new FileNameExtensionFilter("Questioner files only" ,EXTENSION));
+        fileChooser.setFileFilter(new FileNameExtensionFilter("Questioner XML files only", EXTENSION));
 
         loadButton = new JButton("Load");
         class loadButtonListener implements ActionListener {
@@ -264,7 +267,8 @@ public class QuestionerUI extends JFrame implements KeyListener {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             File file = fileChooser.getSelectedFile();
             try {
-                ArrayList<Question> importedQuestions = Question.parse(file);
+                //ArrayList<Question> importedQuestions = Question.parse(file);
+                ArrayList<Question> importedQuestions = Question.parseXML(file);
                 if(importedQuestions.size() > 0) {
                     qm = new QuestionManager(importedQuestions);
                     boolean success = setQuestion();
@@ -275,9 +279,21 @@ public class QuestionerUI extends JFrame implements KeyListener {
                     JOptionPane.showMessageDialog(this, "File does not contain parseable questions!", "File unparseable!", JOptionPane.ERROR_MESSAGE);
                 }
             }
-            catch(FileNotFoundException fnfe) {
+            /*catch(FileNotFoundException fnfe) {
                 fnfe.printStackTrace();
                 JOptionPane.showMessageDialog(this, "File not found!", "File not found!", JOptionPane.ERROR_MESSAGE);
+            }*/
+            catch(IOException ioe) {
+                ioe.printStackTrace();
+                JOptionPane.showMessageDialog(this, "File parsing error.", "IOException", JOptionPane.ERROR_MESSAGE);
+            }
+            catch(ParserConfigurationException pce) {
+                pce.printStackTrace();
+                JOptionPane.showMessageDialog(this, "File parsing error.", "ParserConfigurationException", JOptionPane.ERROR_MESSAGE);
+            }
+            catch(SAXException se) {
+                se.printStackTrace();
+                JOptionPane.showMessageDialog(this, "File parsing error.", "SAXException", JOptionPane.ERROR_MESSAGE);
             }
         } 
         else {
