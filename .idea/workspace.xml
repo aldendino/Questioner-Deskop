@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6194a497-bd22-41f4-9c16-f17188b2341f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input/cps633/cps633_lecture11.xml" afterPath="$PROJECT_DIR$/input/cps633/cps633_lecture11.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input/cps633/cps633_lecture12.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Questioner.iws" />
@@ -31,21 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QuestionerUI.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/QuestionerUI.java">
+      <file leaf-file-name="cps633_lecture12.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/input/cps633/cps633_lecture12.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6045">
-              <caret line="389" column="49" selection-start-line="389" selection-start-column="49" selection-end-line="389" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cps633_lecture11.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/input/cps633/cps633_lecture11.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7398844" vertical-offset="959" max-vertical-offset="1335">
-              <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.6965318" vertical-offset="1169" max-vertical-offset="1515">
+              <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -79,6 +69,7 @@
         <option value="$PROJECT_DIR$/input/cps633_lecture10.xml" />
         <option value="$PROJECT_DIR$/input/cps633/cps633_lecture10.xml" />
         <option value="$PROJECT_DIR$/input/cps633/cps633_lecture11.xml" />
+        <option value="$PROJECT_DIR$/input/cps633/cps633_lecture12.xml" />
       </list>
     </option>
   </component>
@@ -612,7 +603,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/QuestionerUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6045">
+        <state vertical-scroll-proportion="16.213873" vertical-offset="0" max-vertical-offset="6045">
           <caret line="389" column="49" selection-start-line="389" selection-start-column="49" selection-end-line="389" selection-end-column="49" />
           <folding />
         </state>
@@ -620,16 +611,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/input/cps633/cps633_lecture10.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1379" max-vertical-offset="1725">
-          <caret line="97" column="2" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.33125" vertical-offset="419" max-vertical-offset="1725">
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/input/cps633/cps633_lecture11.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7398844" vertical-offset="959" max-vertical-offset="1335">
-          <caret line="81" column="0" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.41618496" vertical-offset="111" max-vertical-offset="1335">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input/cps633/cps633_lecture12.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6965318" vertical-offset="1169" max-vertical-offset="1515">
+          <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
           <folding />
         </state>
       </provider>

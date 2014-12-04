@@ -1,0 +1,96 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>What security service do denial-of-service attacks target?</question>
+        <answer>Availability.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe denial-of-service (DoS).</question>
+        <answer>DoS is an action that prevents or impairs the authorized use of networks, systems, or applications by exhausting resources.</answer>
+    </question-type>
+    <question-type>
+        <question>What are three categories of resources that a denial-of-service attack can exhaust?</question>
+        <answer>1. Networks: overwhelm network capacity and operations of a system, eg. flooding attacks.
+2. Systems: exhaust system resources, eg. SYN spoofing attacks.
+3. Applications: remove or limit an application resources, eg. attacks on a web or a database service.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the basic idea behind a flooding attack?</question>
+        <answer>Use high capacity network resources to overwhelm a lower capacity network connection, eg. Flooding ping.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some drawbacks to the attack in using a flooding attack?</question>
+        <answer>• Attacker is (easily) identified: attacker needs a spoof source address (easy to do): can result in backscatter traffic: use of Honey Pots (e.g.. Honey Net project).
+• The attack can be reflected on the attacker.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the basic idea behind a SYN spoofing attack?</question>
+        <answer>Overflow the TCP connection table with spoof address resulting in connection requests from legitimate users to fail.</answer>
+    </question-type>
+    <question-type>
+        <question>What is an advantage to SYN spoofing attacks over flooding attacks?</question>
+        <answer>Unlike flooding attacks, SYN spoofing attacks can be mounted using relatively low volume of traffic.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some common types of network packets used for flooding attacks?</question>
+        <answer>Common types are ICMP, UDP, and TCP SYN.</answer>
+    </question-type>
+    <question-type>
+        <question>Provide and example of ICMP Flooding.</question>
+        <answer>Use ICMP echo request packets to create a ping flood.
+Much more likely to be allowed through firewalls.</answer>
+    </question-type>
+    <question-type>
+        <question>Provide and example of UDP Flooding.</question>
+        <answer>Direct UDP packets at the diagnostic echo service running at some port on the system.
+Regardless of whether the service is running or not on the system, the response will increase the load on the system!</answer>
+    </question-type>
+    <question-type>
+        <question>Provide and example of TCP SYN Flooding.</question>
+        <answer>Use large volume of TCP SYN or data packets targeted at the victim’s system.
+Similar approach as SYN spoofing attack, however it aims to exhaust network bandwidth with the large traffic volume used.</answer>
+    </question-type>
+    <question-type>
+        <question>What are two ways that flooding attacks can be differentiated?</question>
+        <answer>1. Attacks using one single system as the source versus multiple systems as the source.
+2. Attacks can be direct or indirect.</answer>
+    </question-type>
+    <question-type>
+        <question>Name three examples of indirect attacks?</question>
+        <answer>1. Distributed denial-of-service (DDoS) attacks.
+2. Reflector attacks.
+3. Amplifier attacks.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the typical architecture of a distributed denial-of-service (DDoS) attack?</question>
+        <answer>Architecture typically involves a command-and-control setup.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the basic idea of most application-based attacks?</question>
+        <answer>Make the target execute a large number of resource-consuming operations (disproportionate to attacker’s efforts).</answer>
+    </question-type>
+    <question-type>
+        <question>What are two HTTP-based attacks?</question>
+        <answer>1. HTTP Flood: Make http request that consumes lots of memory, processing, or transmission resources.
+2. Slowloris: Make legitimate, but incomplete requests to the http server.</answer>
+    </question-type>
+    <question-type>
+        <question>What is an advantage that an indirect DDoS attack like reflection attacks have?</question>
+        <answer>No backscatter traffic.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a disadvantage to reflection attacks versus SYN spoofing attacks?</question>
+        <answer>It needs to be able to create a successful spoofed packet which is not the case with SYN spoofing or flooding attacks.s</answer>
+    </question-type>
+    <question-type>
+        <question>Describe the indirect DDoS amplification attack.</question>
+        <answer>A variant of reflection attacks, that amplifies the attacks by using a number of intermediaries, for example by sending the original request to a broadcast address of a network.</answer>
+    </question-type>
+    <question-type>
+        <question>Name four general DDoS countermeasures.</question>
+        <answer>1. Prevention and preemption (before the attack).
+2. Detection and filtering (during the attack).
+3. Source traceback and identification (during and after the attack).
+4. Reaction (after the attack).</answer>
+    </question-type>
+</questions>
