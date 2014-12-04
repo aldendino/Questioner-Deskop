@@ -1,0 +1,110 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>What is Malicious Software or Malware?</question>
+        <answer>Malicious Software or Malware refers to a program that is inserted into a system, usually covertly, with the intent of compromising the confidentiality, integrity, or availability of the victim’s data, applications, or operating system (OS) or of otherwise annoying or disrupting the victim.</answer>
+    </question-type>
+    <question-type>
+        <question>Name two possible classifications of Malware.</question>
+        <answer>1. Propagation: how it spreads or propagates to get to its target(s).
+2. Payload: actions it performs once a target is reached.</answer>
+    </question-type>
+    <question-type>
+        <question>List three examples of Malware propagation.</question>
+        <answer>1. Infection of executables or interpreted content.
+2. Software or OS vulnerability exploits.
+3. Social engineering attacks.</answer>
+    </question-type>
+    <question-type>
+        <question>List three examples of Malware payload.</question>
+        <answer>1. Corruption of system/data files.
+2. Theft of services/information.
+3. Stealting.</answer>
+    </question-type>
+    <question-type>
+        <question>Name two other possible classifications besides propagation versus payload.</question>
+        <answer>1. Needs a host program (parasitic) versus Independent, self-contained program.
+2. Replicating versus Non-Replicating.</answer>
+    </question-type>
+    <question-type>
+        <question>Name three possible sources for attacks.</question>
+        <answer>1. Individuals.
+2. Organizations.
+3. Governments.</answer>
+    </question-type>
+    <question-type>
+        <question>What are Advanced Persistent Threats (APTs)?</question>
+        <answer>Advance: Uses a wide variety of (possibly custom made) intrusion techniques and malware.
+Persistent: Application over an extended period of time.
+Threats: Often aims selected targets.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a computer virus designed to do?</question>
+        <answer>A computer virus is designed to self-replicate – make copies of itself – and distribute the copies to other files, programs, or computers, by attaching itself to some existing executable content. Viruses try to disguise and hide their existence.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the three components of a computer virus?</question>
+        <answer>1. Infection mechanism or infection vector: means by which it spreads or propagates.
+2. Payload: the code for the virus’s objective.
+3. Trigger or logic bomb: a condition that causes the payload to be executed (usually involves user interaction).</answer>
+    </question-type>
+    <question-type>
+        <question>What are the four phases of a computer virus?</question>
+        <answer>Dormant phase: The virus is idle. (Not all viruses have this stage.)
+2. Propagation phase: The virus places a copy of itself into other programs or into certain system areas on the disk. The copy may have morphed.
+3. Triggering phase: The virus is activated (possibly due to a variety of system events) to perform the function for which it was intended.
+4. Execution phase: The virus function (benign or harmful) is performed. Executions are typically done by an operating system (OS) – compiled viruses, or by an application – interpreted viruses.</answer>
+    </question-type>
+    <question-type>
+        <question>What are four ways computer viruses can be classified by target?</question>
+        <answer>1. Boot sector infector: Infects a master boot record or boot record.
+2. File infector: Infects files that the operating system or shell consider to be executable.
+3. Macro virus: Infects files with macro or scripting code that is interpreted by an application.
+4. Multipartite virus: Infects files in multiple way</answer>
+    </question-type>
+    <question-type>
+        <question>What are four ways computer viruses can be classified by concealment strategy?</question>
+        <answer>1. Encrypted virus: the virus is encrypted with a different key for each instance, there is no constant bit pattern to observe.
+2. Stealth virus: A form of virus explicitly designed to hide itself from detection by anti-virus software.
+3. Polymorphic virus: A virus that mutates with every infection, making detection by the signature of the virus impossible.
+4. Metamorphic virus: It mutates with every infection by the virus rewriting itself completely at each iteration</answer>
+    </question-type>
+    <question-type>
+        <question>How can computer viruses avoid detection due to the size change of programs?</question>
+        <answer>Computer viruses can remove a portion of the program that is equal to their size before copying themselves over.</answer>
+    </question-type>
+    <question-type>
+        <question>What are four properties of a Macro or Scripting virus?</question>
+        <answer>1. A macro virus is platform independent.
+2. Macro viruses infect documents, not executable portions of code.
+3. Macro viruses are easily spread.
+4. Access controls are of limited use in preventing their spread, since users are expected to modify them.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some possible ways that worms can access a remote system and propagate?</question>
+        <answer>• Electronic mail or instant messenger facility.
+• File sharing.
+• Remote execution capability.
+• Remote file access or transfer capability.
+• Remote login capability.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe the typical propagation phase for a worm.</question>
+        <answer>• Search for appropriate access mechanisms to other systems to infect
+    – examining host tables, address books, etc.
+    – scanning possible target host addresses – random, hit-list, topological,
+and local subnet.
+    – searching for suitable removable media devices to use.
+• Use the access mechanisms found to transfer and run a copy of itself.</answer>
+    </question-type>
+    <question-type>
+        <question>Explain what a Trojan horse is.</question>
+        <answer>Trojan horses are non-replicating programs that appear to be benign but actually have a hidden malicious purpose. Some Trojan horses are intended to replace existing files, such as system and application executables, with malicious versions; others add another application to systems instead of overwriting existing files.</answer>
+    </question-type>
+    <question-type>
+        <question>What three models do Trojan horses typically fit into?</question>
+        <answer>1. Continuing to perform the function of the original program and additionally performing a separate malicious activity.
+2. Continuing to perform the function of the original program but modifying the function to perform malicious activity.
+3. Performing a malicious function that completely replaces the function of the original program.</answer>
+    </question-type>
+</questions>
