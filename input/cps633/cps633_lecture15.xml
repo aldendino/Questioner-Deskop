@@ -1,0 +1,146 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>Name four formal modelling approach for computer security design and testing.</question>
+        <answer>• Bell-LaPadula Model.
+• Biba Integrity Model.
+• Clark-Wilson Integrity Model.
+• Chinese Wall Model.</answer>
+    </question-type>
+    <question-type>
+        <question>What do the formal modelling approaches focus on?</question>
+        <answer>They focus on either confidentiality or integrity.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the main idea of the Bell-LaPadula (BLP) model?</question>
+        <answer>To formalize security practiced in military and governments to en- sure confidentiality.
+• To capture the minimal requirements, with respect to confidentiality using a state machine model.
+• Each subject and each object: security class</answer>
+    </question-type>
+    <question-type>
+        <question>Provide two examples for security levels in BLP.</question>
+        <answer>• Example: top secret > secret > confidential > restricted > unclassified.
+• Example: strategic > sensitive > confidential > public.
+Note: these are strict ordering.</answer>
+    </question-type>
+    <question-type>
+        <question>What do subject and object represent in the BLP Formal Modal?</question>
+        <answer>• subject: security clearance.
+• object: security classification.</answer>
+    </question-type>
+    <question-type>
+        <question>Provide some possible access modes for the BLP Formal Model.</question>
+        <answer>Example of possible access modes: read, append, write, and execute.</answer>
+    </question-type>
+    <question-type>
+        <question>What type of security does the BLP Formal Model provide?</question>
+        <answer>Multiple categories or levels of data, or multilevel security.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the (minimal) requirements of multilevel secure system, and what are its properties? What are these properties also known as?</question>
+        <answer>Confidentiality.
+• simple security property (ss-property) or no read up: A subject can only read an object of less or equal security level.
+• *-property or no write down: A subject can only write into an object of greater or equal security level.
+Mandatory Access Control (MAC)
+• ds-property: An individual (or role) may grant to another individual (or role) access to a document based on the discretion of the owner, constrained by the MAC rules.</answer>
+    </question-type>
+    <question-type>
+        <question>Provide the BLP Formal Description.</question>
+        <answer>BLP is based on current state of the system (b, M, f, H):
+• Current access set b: (subject, object, access mode) ≡ (s,o,a). Important note: access right s is currently accessing o by mode a.
+• Access matrix M: M_ij -> S_i is permitted to access O_j.
+• Level function f: assigns a security level to each subject and object: f_o(O_j), f_s(S_i), and f_c(S_i).
+• Hierarchy H: a directed rooted tree whose nodes correspond to objects in the system – security level of an object must dominate the security level of its parent.</answer>
+    </question-type>
+    <question-type>
+        <question>Provide the BLP Formal Properties.</question>
+        <answer>For every subject S_i and every object O_j, we have:
+• ss-property: Every triple of the form (S_i,O_j,read) in the current access set b has the property f_c(S)i) &gt;= f_o(O_j).
+• *-property: Every triple of the form (S_i,O_j, append) in the current access set b has the property f_c(S_i) &lt;= f_o(O_j). Every triple of the form (S_i,O_j,write) in the current access set b has the property f_c(S_i) = f_o(O_j).
+• ds-property: If (S_i,O_j,A_x) is a current access (is in b), then access mode A_x is recorded in the (S_i,O_j) element of M. That is, (S_i,O_j,A_x) implies that Ax is in M[S_i,O_j].</answer>
+    </question-type>
+    <question-type>
+        <question>When is a system considered secure with respect to confidentiality?</question>
+        <answer>A system is considered secure with respect to confidentiality if:
+• The current security state of the system (b,M,f,H) is secure if and only if every element of b satisfies the three properties.
+• The security state of the system is changed by any operation that causes a change any of the four components of the system, (b, M, f, H).
+• A secure system remains secure so long as any state change does not violate the three properties.</answer>
+    </question-type>
+    <question-type>
+        <question>What can change the security state of a given system?</question>
+        <answer>• Get access: Add a triple (subject, object, access-mode)to the current access set b.
+• Release access: Remove a triple (subject, object, access-mode)to the current access set b.
+• Change object level: Change the value of fo(Oj) for some object Oj.
+• Change current level: Change the value of fc(Si) for some subject Sj.
+• Give access permission: Add an access mode to some entry of the access permission matrix M.
+• Rescind access permission: Delete an access mode from some entry of M.
+• Create an object: Attach an object to the current tree structure H as a leaf.
+• Delete a group of objects: Detach from H an object and all other objects beneath it in the hierarchy.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some limitations to the BLP Formal Model?</question>
+        <answer>• No provision to manage the “downgrade” of objects’ security labels.
+• Classification creep.</answer>
+    </question-type>
+    <question-type>
+        <question>What does the Biba Integrity Model deal with?</question>
+        <answer>Deals with integrity and unauthorized modification of data – assume that data is visible at multiple or all security levels.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe the Biba Integrity Model.</question>
+        <answer>• Very similar to BLP set up
+– Integrity levels I(S) and I(O),
+– A simple hierarchical classification, a strict ordering of levels from lowest to highest.
+– Typical access modes: Modify, Observe, Execute, and Invoke.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the three Biba integrity policy rules and what do they mean?</question>
+        <answer>• Simple integrity: A subject can modify an object only if the integrity level of the subject dominates the integrity level of the object: I(S) &gt;= I(O).
+• Integrity confinement: A subject can read an object only if the integrity level of the subject is dominated by the integrity level of the object: I(S) &lt;= I(O).
+• Invocation property: A subject can invoke another subject only if I(S_1) I(S_2)</answer>
+    </question-type>
+    <question-type>
+        <question>What is the Clark-Wilson (CW) Integrity Model mainly aimed at, and what are the main two basic concepts?</question>
+        <answer>Mainly aimed at commercial applications.
+Based on two main concepts:
+• Well-formed transactions.
+• Separation of duty among users.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the four principle components of the Clark-Wilson (CW) Integrity Model?</question>
+        <answer>Principle components:
+• Constrained Data Items (CDIs).
+• Unconstrained Data Items (UDIs).
+• Integrity Verification Procedures (IVPs).
+• Transformation procedures (TPs).</answer>
+    </question-type>
+    <question-type>
+        <question>How does the Clark-Wilson (CW) Integrity Model ensure integrity?</question>
+        <answer>Use certification, i.e. certification rules, and enforcement, i.e. enforcement rules to ensure integrity.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe the Chinese Wall Model (CWM).</question>
+        <answer>• Commonly used in the financial and legal professions
+• Its main aim to prevent conflict of interest.
+• Not really a multilevel security model!</answer>
+    </question-type>
+    <question-type>
+        <question>What are the model elements of the Chinese Wall Model?</question>
+        <answer>Model elements:
+• Subject
+• Information
+    – Objects
+    – Dataset (DS)
+    – Conflict of Interest (CI) class
+• Access rules: read, write.</answer>
+    </question-type>
+    <question-type>
+        <question>What rules define the Chinese Wall Model?</question>
+        <answer>Simple security rule: A subject S can read on object O only if:
+• O is in the same DS as an object already accessed by S, OR
+• O belongs to a CI from which S has not yet accessed any information.
+*-property rule: A subject S can write an object O only if:
+• S can read O according to the simple security rule, AND
+• All objects that S can read are in the same DS as O.</answer>
+    </question-type>
+</questions>
