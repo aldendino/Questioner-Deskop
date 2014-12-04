@@ -1,0 +1,84 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>How can payloads cause system corruption?</question>
+        <answer>• Display ’unwanted’ message or content.
+• data destruction.
+• Damage integrity of system’s software or hardware.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a bot or zombie?</question>
+        <answer>A bot (robot), zombie or drone subverts the computational and network resources of the infected system for use by the attacker.￼Normally, a bot is typically planted on hundreds or thousands of computers belonging to unsuspecting third parties (botnet).</answer>
+    </question-type>
+    <question-type>
+        <question>What are some typical uses of bots?</question>
+        <answer>• Distributed denial-of-service (DDoS) attacks.
+• Spamming.
+• Spreading new malware.
+• Installing advertisement add-ons and browser helper objects (BHOs).
+• Manipulating online polls/games.
+• Sniffing traffic.
+• Keylogging.
+• Attacking IRC chat networks.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a key difference between a bot and a worm?</question>
+        <answer>A key difference between a bot and worm is that a worm need a remote control facility. i.e. A worm propagates itself and activates itself, whereas a bot is controlled from some central facility, at least initially.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some ways the command-and-control server can communicate with its bots?</question>
+        <answer>• IRC channels
+• Peer-to-Peer
+• HTTP</answer>
+    </question-type>
+    <question-type>
+        <question>What are three methods of information theft?</question>
+        <answer>1. Keyloggers: captures keystrokes on the infected machine to allow an attacker to monitor this sensitive information. Examples include: KeySnatch, Spyster, and KeyLogger Pro.
+2. Phishing: exploits social engineering to leverage userÕs trust by masquerading as communications from a trusted source. This is a form of non-malware threat that is often associated with malware.
+3. Spear-Phishing: Carefully crafted e-mail spoofing fraud that target specific individuals or organizations.</answer>
+    </question-type>
+    <question-type>
+        <question>What are two types of stealthing?</question>
+        <answer>1. Backdoor or Trapdoor: a (secret) entry point into a program that allows some- one who is aware of the backdoor to gain access without going through the usual security access procedures.
+2. Rootkit: a collection of files that is installed on a system to alter its standard functionality in a malicious and stealthy way. A rootkit typically makes many changes to a system to hide the rootkit’s existence, making it very difficult to determine that the rootkit is present and to identify what the rootkit has changed.</answer>
+    </question-type>
+    <question-type>
+        <question>What characteristics can be used to classify rootkits?</question>
+        <answer>• Persistent.
+• Memory based.
+• User mode.
+• Kernel mode.
+• Virtual machine based.
+• External mode.</answer>
+    </question-type>
+    <question-type>
+        <question>How can a kernel-level root kit can change system calls on a unix/linux machine?</question>
+        <answer>• Modify the system call table.
+• Modify system call table targets.
+• Redirect the system call table.</answer>
+    </question-type>
+    <question-type>
+        <question>Name four general elements of malware countermeasure strategy.</question>
+        <answer>1. Policy: Ensure that organizations’ policies address prevention of malware incidents.
+2. Awareness: Explain proper rules of behaviour for use of an organization’s IT systems and information.
+3. Vulnerability Mitigation: Should have documented policy, processes, and procedures for vulnerability mitigation and should also consider creating a vulnerability management program to assist in mitigation efforts. (use a layered defense approach).
+4. Threat Mitigation: In addition to their vulnerability mitigation efforts, organizations should perform threat mitigation to detect and stop malware before it can affect its targets. For example, security tools such as: antivirus software, spyware detection and removal utilities, intrusion prevention systems (IPS), and firewalls should be used.
+        </answer>
+    </question-type>
+    <question-type>
+        <question>If malware prevention techniques fail, what is the next step?</question>
+        <answer>If the prevention techniques fail, the next steps in threat mitigation strategy is to detect, identify, and remove the malware.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the four generations of anti-virus systems?</question>
+        <answer>• First generation: simple scanners.
+• Second generation: heuristic scanners.
+• Third generation: activity traps.
+• Fourth generation: full-featured protection.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the two perimeter scanning approaches?</question>
+        <answer>1. Ingress monitors: These are located at the border between the enterprise network and the Internet.
+2. Egress monitors: These can be located at the egress point of individual LANs on the enterprise network as well as at the border between the enterprise network and the Internet.</answer>
+    </question-type>
+</questions>
