@@ -71,7 +71,7 @@ Threats: Often aims selected targets.</answer>
     </question-type>
     <question-type>
         <question>How can computer viruses avoid detection due to the size change of programs?</question>
-        <answer>Computer viruses can remove a portion of the program that is equal to their size before copying themselves over.</answer>
+        <answer>Computer viruses can remove a portion of the file that is equal to their size before copying themselves over into that file.</answer>
     </question-type>
     <question-type>
         <question>What are four properties of a Macro or Scripting virus?</question>
