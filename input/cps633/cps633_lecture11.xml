@@ -8,7 +8,7 @@
     </question-type>
     <question-type>
         <question>What is a bot or zombie?</question>
-        <answer>A bot (robot), zombie or drone subverts the computational and network resources of the infected system for use by the attacker.￼Normally, a bot is typically planted on hundreds or thousands of computers belonging to unsuspecting third parties (botnet).</answer>
+        <answer>A bot (robot), zombie or drone subverts the computational and network resources of the infected system for use by the attacker. Normally, a bot is typically planted on hundreds or thousands of computers belonging to unsuspecting third parties (botnet).</answer>
     </question-type>
     <question-type>
         <question>What are some typical uses of bots?</question>
