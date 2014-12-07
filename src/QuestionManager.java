@@ -86,8 +86,24 @@ public class QuestionManager {
      * Move the index of the current question to a random position.
      */
     public void generateIndex() {
-        if(randomLeft.size() <= 0) fillRandomLeft();
-        index = randomLeft.remove(generator.nextInt(randomLeft.size()));
+        if(randomLeft.size() <= 0) {
+            fillRandomLeft();
+            if(randomLeft.size() > 1) {
+                index = randomLeft.remove(generator.nextInt(randomLeft.size()));
+            }
+            else {
+                int last = index;
+                int next = generator.nextInt(questions.size());
+                while(next == last) { // Do not repeat a question.
+                    next = generator.nextInt(questions.size());
+                }
+                randomLeft.remove((Integer) next);
+                index = next;
+            }
+        }
+        else {
+            index = randomLeft.remove(generator.nextInt(randomLeft.size()));
+        }
 
         /*if(questions.size() > 1) {
             int last = index;
