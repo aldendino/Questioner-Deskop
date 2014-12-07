@@ -25,7 +25,7 @@
     </question-type>
     <question-type>
         <question>What is the difference between a Strong Entity and a Weak Entity?</question>
-        <answer>A Strong Entity has sufficient attributes to uniquely identified by them, whereas a Weak Entity requires the use of a foreign key from another entity in order to be uniquely identified.
+        <answer>A Strong Entity has sufficient attributes to be uniquely identified by them, whereas a Weak Entity requires the use of a foreign key from another entity in order to be uniquely identified.
 Strong Entity types do not depend on other entity types for existence, whereas Weak Entity types depend on other entity types for existence.</answer>
     </question-type>
     <question-type>
