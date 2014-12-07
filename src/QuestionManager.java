@@ -10,6 +10,7 @@ public class QuestionManager {
     private int index; // The index of the current questions.
 
     private Random generator; // The random index generator.
+    private ArrayList<Integer> randomLeft; // What is left to pick as a random value;
 
     /**
      * Create a manager based on an array of questions.
@@ -24,6 +25,17 @@ public class QuestionManager {
         }
         index = 0;
         generator = new Random();
+        randomLeft = new ArrayList<Integer>();
+        fillRandomLeft();
+    }
+
+    /**
+     * Fill the array of indices to pick after it is emptied.
+     */
+    private void fillRandomLeft() {
+        for (int i = 0; i < questions.size(); i++) {
+            randomLeft.add(i);
+        }
     }
 
     /**
@@ -74,7 +86,10 @@ public class QuestionManager {
      * Move the index of the current question to a random position.
      */
     public void generateIndex() {
-        if(questions.size() > 1) {
+        if(randomLeft.size() <= 0) fillRandomLeft();
+        index = randomLeft.remove(generator.nextInt(randomLeft.size()));
+
+        /*if(questions.size() > 1) {
             int last = index;
             int next = generator.nextInt(questions.size());
             while(next == last) { // Do not repeat a question.
@@ -84,7 +99,7 @@ public class QuestionManager {
         }
         else {
             index = generator.nextInt(questions.size());
-        }
+        }*/
     }
 
 }
