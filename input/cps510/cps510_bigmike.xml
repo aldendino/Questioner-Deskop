@@ -1,0 +1,110 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>What is a Conceptual Schema (Conceptual View)?</question>
+        <answer>Machine-and-software independent description of the total database. It is also referred to as a logical database.</answer>
+    </question-type>
+    <question-type>
+        <question>What is an Internal Schema (Internal View)?</question>
+        <answer>Description of the physical database! It is close to the machine level and describes such things as file organization and access paths.</answer>
+    </question-type>
+    <question-type>
+        <question>What is an External Schema (User View)?</question>
+        <answer>User-oriented description of part of the database. It corresponds to a way in which a program needs to "view" the database. Since there are many purposes to which the data in a database maybe put, there will be many different external schemas (or schemata) corresponding to different programs interpreting the database in particular ways.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Database Management System?</question>
+        <answer>A Database Management System is software used to read/write, maintain, and provide among other things, security and integrity for the data.</answer>
+    </question-type>
+    <question-type>
+        <question>What are 4 Elements of the description of a Conceptual Schema?</question>
+        <answer>1. The kinds of logical files and record types comprising the db.
+2. The fields included in the record type
+3. The relationships between the different record types of the db.
+4. Any limitations in the values that can be taken by individual fields, as well as, constraints upon the relationships between records.</answer>
+    </question-type>
+    <question-type>
+        <question>What are Entities?</question>
+        <answer>Entities are items or concepts in the real world about which we want to report data.</answer>
+    </question-type>
+    <question-type>
+        <question>What are Attributes?</question>
+        <answer>Attributes are data associated with an Entity.</answer>
+    </question-type>
+    <question-type>
+        <question>What is an Entity type?</question>
+        <answer>An entity type is a classification of all the entities describing the same type of item or concept from the real world.</answer>
+    </question-type>
+    <question-type>
+        <question>Qhat does a description of an Entity type in the conceptual database include?</question>
+        <answer>A description of an Entity type in the conceptual database includes:
+    • An unique name for each entity type.
+    • A field containing a unique identifier for each individual Entity called a key.
+    • A description of all attributes or fields of the entity type.
+    • An indication of the number of occurrences of an entity type the Database will be required to hold, known as the cardinal number of the entity type.</answer>
+    </question-type>
+    <question-type>
+        <question>What types of Attributes could be in an Entity?</question>
+        <answer>Some attributes which maybe in an entity are:
+    • Mandatory or optional depending on whether fields should or should not always have a value.
+    • Single-valued or multi-valued. Multi-valued Attributes are stored in repeating fields
+    • Aggregate or simple. Corresponding to whether an attribute is formed from a combination of other attributes or not.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Relationship used for?</question>
+        <answer>A Relationship is used to describe a connection between Entities.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Relation used for?</question>
+        <answer>A Relation is used to designate a logical table describing a set of similar Entities.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Data Model?</question>
+        <answer>A data model is a method used to describe the Entity types and relationships of the Conceptual Database.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the 3 stages of the design of a Conceptual Schema?</question>
+        <answer>1. Choice of Model
+        2. Normalization
+        3. Logical Optimization and Adjustments</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Relation, Tuple, Attribute, and Domain?</question>
+        <answer>• Relation = table = file
+• Tuple = record
+• Attribute = a field
+• Domain = field's value area</answer>
+    </question-type>
+    <question-type>
+        <question>Describe First Normal Form.</question>
+        <answer>• Each tuple must contain a unique identifier.
+• Tuples have only atomic values in their Attributes.</answer>
+    </question-type>
+    <question-type>
+        <question>What does it mean for a field to be Functionally Dependent?</question>
+        <answer>Field Y is said to be functionally dependent on field X, if and only if, for all pairs of records in the file, that if they have the same value in field X, then they also have in field Y.</answer>
+    </question-type>
+    <question-type>
+        <question>What does it mean for a field to be Fully Functionally Dependent?</question>
+        <answer>Field Y is said to be fully functionally dependent on X if Y is
+            functionally dependent on X, and not functionally dependent on any
+            subset of X's possible subfields.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a determinant for a field?</question>
+        <answer>A field on which another field is fully functional dependent is called the determinant for that field.</answer>
+    </question-type>
+    <question-type>
+        <question>What does it mean for a field to be Transitively Functionally Dependent?</question>
+        <answer>Field Y is said to be transitively functionally dependent on X if there is some other field Z such that X determines the value of Z and Z determines the value of Y.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe Second Normal Form.</question>
+        <answer>• A relation is in 2NF if it is in 1NF and if all non-identifier fields are fully functional dependent on the record's identifier.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe Third Normal Form.</question>
+        <answer>• The relation is in 3NF if it is in 2NF and the record's non-identifier fields are not transitively dependent on the record's id field.
+• The non-key fields must contain data that is attached to the identifier field, to the entire identifier and nothing but the identifier field.</answer>
+    </question-type>
+</questions>
