@@ -1,0 +1,147 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>Define Trust.</question>
+        <answer>The extent to which someone who relies on a system can have confidence that the system meets its specifications (i.e. that the system does what it claims to do and does not perform unwanted functions).</answer>
+    </question-type>
+    <question-type>
+        <question>Define a Trust System.</question>
+        <answer>A system believed to enforce a given set of attributes to a stated degree of assurance.</answer>
+    </question-type>
+    <question-type>
+        <question>Define Trustworthiness.</question>
+        <answer>Assurance that a system deserves to be trusted, such that the trust can be guaranteed in some convincing way, such as through formal analysis or code review.</answer>
+    </question-type>
+    <question-type>
+        <question>Define a Trusted Computer System.</question>
+        <answer>A system that employs sufficient hardware and software assurance measures to allow its use for simultaneous processing of a range of sensitive or classified information.</answer>
+    </question-type>
+    <question-type>
+        <question>Define a Trusted Computing Base (TCB).</question>
+        <answer>A portion of a system that enforces a particular policy. The TCB must be resistant to tampering and circumvention. The TCB should be small enough to be analysed systematically.</answer>
+    </question-type>
+    <question-type>
+        <question>Define Assurance.</question>
+        <answer>A process that ensures a system is developed and operated as intended by the security policy of the system.</answer>
+    </question-type>
+    <question-type>
+        <question>Define Evaluation.</question>
+        <answer>Assessing whether the product has the security properties claimed for it.</answer>
+    </question-type>
+    <question-type>
+        <question>Define Functionality.</question>
+        <answer>The security features provided by a product.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe a Reference Monitor and name its properties.</question>
+        <answer>The reference monitor enforces the security rules (no read up, no write down) and has the following properties:
+• Complete mediation.
+• Isolation.
+• Verifiability.</answer>
+    </question-type>
+    <question-type>
+        <question>What does a Reference Monitor require?</question>
+        <answer>• high performance overheads: at least partly implemented in hardware.
+    • A system that mathematical security proof: a trustworthy system,</answer>
+    </question-type>
+    <question-type>
+        <question>Descibe how to use MultiLevel Security (MLS) with RBAC.</question>
+        <answer>• RBAC can be used to implement BLP.
+• RBAC allows for admin functions.
+Using RBAC to implement MLS:
+• Constraint on users Subjects’ security clearance.
+• Constraints on permissions Objects’ security classification
+• Definitions No read up
+• Constraints on UA No write down.</answer>
+    </question-type>
+    <question-type>
+        <question>How does using MultiLevel Security (MLS) with DataBase Management Systems (DBMS) affect complexity, design, and security?</question>
+        <answer>Use of MLS with DBMS increases complexity of the access control function and of the design of the database itself. But, it can also provide for more granularity.</answer>
+    </question-type>
+    <question-type>
+        <question>Where in the DataBase Management System can levels and classifications be applied?</question>
+        <answer>• Entire database.
+• Individual tables (relations).
+• Individual columns (attributes).
+• Individual rows (tuples).
+• Individual elements.
+Note: each has its own pros and cons!</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Trusted Platform Module?</question>
+        <answer>A trusted, secure hardware module: Trusted Computing (TC).</answer>
+    </question-type>
+    <question-type>
+        <question>What three basic services does a Trusted Platform Module (TMP) provide?</question>
+        <answer>• Authenticated Boot Service.
+    – Ensure use of protected Boot ROM.
+    – Use a tamper-resistant log to record completed boot process: can extend its functionality to other hardware, applications, and software components.
+• Certification Service: TPM can certify the configuration to other parties
+    – The TPM is considered trustworthy.
+    – Only the TPM possesses this TPM’s private key.
+• Encryption.
+    – Uses a long term master key, generates ephemeral keys for each configuration.
+    – If data is encrypted while the machine is in one configuration, the data can only be decrypted using that same configuration.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the aim of the Common Criteria (CC) for Information Technology and Security Evaluation?</question>
+        <answer>Greater level of confidence based on formal and systematic actions taken.
+• Sets of IT requirements of known validity.
+• Specify how to evaluate the system against the requirements.
+• Details process for responding to vulnerabilities, and possibly reevaluating the product.
+This may result in official ‘certifications’ for evaluated products.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the general requirements of Common Criteria (CC)?</question>
+        <answer>Identify Target Of Evaluation (TOE) ≡ part of the product or system subject to evaluation.
+• Functional requirements: Define desired security behaviour.
+• Assurance requirements: Methods and procedure to ensure security measures are effective and implemented correctly.
+Both set of requirements are organized into classes > families > components</answer>
+    </question-type>
+    <question-type>
+        <question>What two kinds of documents can be generated using the CC-defined requirements?</question>
+        <answer>1. Protection profiles (PPs): An implementation-independent set of security requirements and objectives for a category of products or systems.
+2. Security targets (STs): Contain the IT security objectives and requirements of a specific identified TOE and defines the functional and assurance measures offered by that TOE to meet stated requirements.</answer>
+    </question-type>
+    <question-type>
+        <question>Define Security Assurance.</question>
+        <answer>Security assurance is the degree of confidence one has that the security controls operate correctly and protect the system as intended. Assurance is not, however, an absolute guarantee that the measures work as intended.</answer>
+    </question-type>
+    <question-type>
+        <question>Who is security assurance for?</question>
+        <answer>• Consumers
+• Developers
+• Evaluators</answer>
+    </question-type>
+    <question-type>
+        <question>What should security assurance cover?</question>
+        <answer>• Requirements
+• Security policy
+• Product design
+• Product implementation
+• System operation</answer>
+    </question-type>
+    <question-type>
+        <question>List and define the seven Evaluation Assurance Levels (EALs).</question>
+        <answer>• EAL 1: functionally tested: It involves independent product testing with no input from the product developers.
+• EAL 2: structurally tested: Includes a review of a high-level design provided by the product developer. Developers must conduct a vulnerability analysis for well-known flaws.
+• EAL 3: methodically tested and checked: Requires a focus on the security features.
+• EAL 4: methodically designed, tested, and reviewed: Requires a low-level and a high-level design specification.
+• EAL 5: semi-formally designed and tested: Provides an analysis that includes all of the implementation.
+• EAL 6: semi-formally verified design and tested: Permits a developer to gain high assurance from application of specialized security engineering techniques in a rigorous development environment.
+• EAL 7: formally verified design and tested: The formal model is supplemented by a formal presentation of the functional specification and high level design.</answer>
+    </question-type>
+    <question-type>
+        <question>Who does the Evaluation Process involve?</question>
+        <answer>• Sponsor
+• Developer
+• Evaluator
+• Certifier</answer>
+    </question-type>
+    <question-type>
+        <question>What are the typical phases of an evaluation process?</question>
+        <answer>• Preparation
+• Conduct of evaluation
+• Conclusion</answer>
+    </question-type>
+</questions>

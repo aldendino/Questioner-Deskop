@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>What is the capital of Canada?</question>
+        <answer>Ottawa.</answer>
+    </question-type>
+    <question-type>
+        <question>Where does the word Canada come from?</question>
+        <answer>The St. Lawrence Iroquoian word for settlement or village.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the Canadian Motto?</question>
+        <answer>"A Mari Usque ad Mare, or "From Sea to Sea".</answer>
+    </question-type>
+</questions>

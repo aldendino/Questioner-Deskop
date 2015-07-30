@@ -1,0 +1,188 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>Describe the basic concept of a firewall.</question>
+        <answer>A firewall insulates internal systems from external ones, and acts as a layer of defence.</answer>
+    </question-type>
+    <question-type>
+        <question>What basic design requirements are necessary for a firewall to work?</question>
+        <answer>• All traffic has to go through the firewall.
+• Only authorized traffic should be allowed through.
+• The firewall itself has to be immune to penetration.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some capabilities of a firewall?</question>
+        <answer>• Can act as a single choke point to stop unauthorized access attempts: simplifies security management, but can also present a single point of failure/attack! It cannot protect the system if other possible access points are made/become available, or more difficult to be effective against internal attackers.
+• Can also be used for monitoring security-related events.
+• Can be used for providing other network-related services, eg. NAT or network management function.
+• Can serve as a platform for IPSec, and VPNs</answer>
+    </question-type>
+    <question-type>
+        <question>What are the four general types of firewall and which layer of the OSI protocol stack do they operate on?</question>
+        <answer>• A packet filter is a firewall that operates at the network layer.
+• A stateful inspection packet filter is a firewall that lives at the transport layer.
+• An application proxy is a firewall that operates at the application layer where it functions as a proxy.
+• A circuit-level proxy is a firewall that operates at the session layer.</answer>
+    </question-type>
+    <question-type>
+        <question>What other names are there for Packet Filtering Firewalls?</question>
+        <answer>These types of firewalls are sometimes referred to as the Screening Routers, Stateless Packet Filtering or the first generation of firewalls.</answer>
+    </question-type>
+    <question-type>
+        <question>What information can a Packet Filtering Firewall filter by being on the Network layer?</question>
+        <answer>– the source IP address
+– the destination IP address
+– the source port
+– the destination port, and
+– can include the TCP flag bits (SYN, ACK, RST, etc.) – even though these are part of the transport layer.</answer>
+    </question-type>
+    <question-type>
+        <question>What does it mean for Packet Filtering Firewalls to be able to filter on ingress or egress?</question>
+        <answer>It can have different filtering rules for incoming and outgoing packets.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe packet filters.</question>
+        <answer>Packet filters are list of rules based on matches to packet header fields. These rules are referred to as Access Control Lists (ACLs).</answer>
+    </question-type>
+    <question-type>
+        <question>What are two default packet filtering policies?</question>
+        <answer>1. Default = discard (the restrictive approach)
+2. Default = forward (the permissive approach)</answer>
+    </question-type>
+    <question-type>
+        <question>List some advantages and disadvantages of packet filtering firewalls.</question>
+        <answer>• Only the low-level information contained in the packet itself will be filtered: filtering is is inherently efficient.
+• Application-specific vulnerabilities, such as viruses and worms can get through!
+• It provides limited logging abilities.
+• Typically do not support advanced user authentication.
+• It is vulnerable to a number of network layer specific attacks.
+• It is more prone to improper configuration!</answer>
+    </question-type>
+    <question-type>
+        <question>Name four possible attacks on a Packet Filtering Firewall.</question>\
+        <answer>1. IP address spoofing.
+2. Source routing attacks.
+3. Tiny fragment attacks.
+4. Port scan (or Firewalking) attacks.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the objective of a port scanning attack, how does it work, and what way is there to fix this problem?</question>
+        <answer>To find out which ports are open through a packet filter firewall. Takes advantage of the TCP three-way handshake.
+• Attacker sends an initial packet with the ACK flag set to a particular port p.
+• If no response is received, then the firewall is not forwarding packets sent to port p.
+• If a RST packet is received by the attacker, then the packet was allowed through port p into the internal network!
+This problem happens since the firewall is stateless, i.e. no information on the connection state is examined: the firewall needs to remember existing TCP connections: therefore the solution is stateful packet filtering.</answer>
+    </question-type>
+    <question-type>
+        <question>List some advantages and disadvantages of Stateful Inspection Firewalls.</question>
+        <answer>• In addition to all of the features of a packet filter, it also keeps track of ongoing the TCP and the UDP connections (and sometime sequence numbers).
+• Inherently more secure than (stateless) packet filtering. Also, it does not require the admin to write broad, but insecure source-filtering rule to allow return traffic.
+• Firewall keeps TPC/UDP connections as entries in cache: Cache table overflow.
+• Still cannot examine higher level information, such as application data.
+• Requires more processing: it is slower than packet filtering.</answer>
+    </question-type>
+    <question-type>
+        <question>What OSI layer does a Circuit-Level Proxy Firewall operate on, and how does it do so?</question>
+        <answer>Operates at the session layer – monitors TCP handshakes between from trusted clients or servers to untrusted hosts and vice versa to determine if a requested session is legitimate.</answer>
+    </question-type>
+    <question-type>
+        <question>List some advantages and disadvantages of Circuit-Level Gateway Firewalls.</question>
+        <answer>• Does not permit an end-to-end TPC connection.
+• Establishes a virtual circuit between the internal hosts and the proxy server, using NAT.
+• Establishes another TPC connection between the external hosts and the proxy server.
+• Internal private IP addresses are not exposed to potential external intruders.
+• Often it used together with application-level firewalls.</answer>
+    </question-type>
+    <question-type>
+        <question>What does an Application-Level firewall provide?</question>
+        <answer>An Application-Level firewall provides all the Circuit-Level firewall features and also provides extensive packet analysis available at the application layer.</answer>
+    </question-type>
+    <question-type>
+        <question>List some advantages and disadvantages of Application-Level Proxy Firewalls.</question>
+        <answer>• Processes incoming packets all the way up to the application layer: able to verify that the packet appears to be legitimate (as with a stateful packet filter) and, in addition, that the actual data inside the packet is safe.
+• The proxy has a complete view of connections and application data – it can have as comprehensive of a view as the host itself could have.
+• Only has to scrutinize a few allowable applications.
+• More secure than packet filters, but it requires much more processing</answer>
+    </question-type>
+    <question-type>
+        <question>Describe a Bastion host.</question>
+        <answer>• A critical strong point in the network’s security.
+• Typically serves as a platform for an application-level or circuit-level gateway.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some common characteristics of a Bastion host?</question>
+        <answer>• It should executes a secure version of operating OS.
+• Only the services that the network administrator considers essential are installed.
+• Typically requires additional authentication before a user is allowed access to the proxy services.
+• Only supports a subset of the standard application’s command set.
+• Each proxy is is configured to allow access only to specific host systems. It will also keep a detail log of all connections.
+• Each proxy module is a very small software package specifically designed for network security, and it runs as a non-privileged user in a private and secured directory on the bastion host.
+• A proxy generally performs no disk access other than to read its initial configuration file.</answer>
+    </question-type>
+    <question-type>
+        <question>What are Host-based Firewalls?</question>
+        <answer>Software-based firewall to secure an individual host.</answer>
+    </question-type>
+    <question-type>
+        <question>Where can Host-based Firewalls be found?</question>
+        <answer>Available on many current OS – also can be used as an add-on.</answer>
+    </question-type>
+    <question-type>
+        <question>Where is an Internal DMZ (DeMilitarized Zone) Network located?</question>
+        <answer>Between the external and internal firewall.</answer>
+    </question-type>
+    <question-type>
+        <question>How do Virtual Private Networks (VPN) function?</question>
+        <answer>VPNs send secure packets over the internet to locations with IPSec enabled firewalls.</answer>
+    </question-type>
+    <question-type>
+        <question>Where can firewalls be placed?</question>
+        <answer>Firewall can be placed on the hosts, i.e. host-based/host-resident firewalls, or on a different places on network.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Screening Router?</question>
+        <answer>A single router between internal and external networks with stateless or full packet filtering – typical configuration for small office / home office (SOHO) applications.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Single bastion inline?</question>
+        <answer>A single firewall device between an internal and external router, could use stateful filters and/or application proxies – typical configuration for small to medium-sized organizations.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Single bastion T?</question>
+        <answer>Similar to single bastion inline but has a third network interface on bastion to a DMZ – typical configuration for medium to large organizations.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Double bastion inline?</question>
+        <answer>DMZ is sandwiched between bastion firewalls – typical configuration large businesses and government organizations.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Double bastion T?</question>
+        <answer>DMZ is on a separate network interface on the bastion firewall – typical configuration large businesses and government organizations.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Distributed firewall configuration usually used by?</question>
+        <answer>Typical arrangement for businesses and government organizations.</answer>
+    </question-type>
+    <question-type>
+        <question>Define Intrusion Prevention Systems (IPS).</question>
+        <answer>Intrusion Prevention Systems (IPS), sometimes called Intrusion Detection and Prevention Systems (IDPS) are an extension of an IDS that include the capability to attempt to block or prevent detected malicious activity.
+• An IPS is an inline network-based IDS (NIDS) that has the capability to block traffic by discarding packets as well as simply detecting suspicious traffic. Alternatively, the IPS can monitor ports on a switch that receives all traffic and then send the appropriate commands to a router or firewall to block traffic. For host-based systems, an IPS is a host-based IDS that can discard incoming traffic.
+• An IPS is a functional addition to a firewall that adds IDS types of algorithms to the repertoire of the firewall.</answer>
+    </question-type>
+    <question-type>
+        <question>Name three types of IPSs and provide examples of what they deal with.</question>
+        <answer>1. Host-Based IPS (HIPS):
+    – System calls.
+    – File system access.
+    – System registry settings. – Host input/output.
+2. Network-Based IPS (NIPS): – Pattern matching.
+    – Stateful matching. – Protocol anomaly.
+    – Traffic anomaly.
+    – Statistical anomaly.
+3. Distributed or Hybrid IPS:</answer>
+    </question-type>
+    <question-type>
+        <question>What is Unified Threat Management?</question>
+        <answer>Products that include multiple security features integrated into one box.</answer>
+    </question-type>
+</questions>

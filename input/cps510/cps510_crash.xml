@@ -1,0 +1,151 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>What is the motivation behind database management systems?</question>
+        <answer>Data independence.</answer>
+    </question-type>
+    <question-type>
+        <question>List the ANSI-SPARC Standard levels in descending order.</question>
+        <answer>- External Level (Views)
+- Conceptual Level (Schema)
+- Internal Level (Schema)
+- Stored Database</answer>
+    </question-type>
+    <question-type>
+        <question>What three items comprise an Entity-Relationship (ER) Model?</question>
+        <answer>1. Entities (Relations)
+2. Relationships
+3. Attributes</answer>
+    </question-type>
+    <question-type>
+        <question>What are the three types of mapping constraints?</question>
+        <answer>- 1:1
+- 1:N
+- M:N</answer>
+    </question-type>
+    <question-type>
+        <question>What is the difference between a Strong Entity and a Weak Entity?</question>
+        <answer>A Strong Entity has sufficient attributes to be uniquely identified by them, whereas a Weak Entity requires the use of a foreign key from another entity in order to be uniquely identified.
+Strong Entity types do not depend on other entity types for existence, whereas Weak Entity types depend on other entity types for existence.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a Relationship type?</question>
+        <answer>A meaningful association among entity types.</answer>
+    </question-type>
+    <question-type>
+        <question>What are two types of relationships?</question>
+        <answer>1. Binary
+2. Ternary</answer>
+    </question-type>
+    <question-type>
+        <question>How should attributes be chosen?</question>
+        <answer>Attributes should be operational data (needed for the system).</answer>
+    </question-type>
+    <question-type>
+        <question>What is the difference between Simple and Composite attributes?</question>
+        <answer>Composite attributes are made up of Simple attributes, where a Simple attribute is a single independent component.</answer>
+    </question-type>
+    <question-type>
+        <question>What are derived attributes?</question>
+        <answer>Derived attributes can be determined based solely on other attributes.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the difference between single-valued and  multi-valued attributes?</question>
+        <answer>Single-valued attributes have only one value for each instance of an entity type, whereas multi-valued attributes may have more than one value for an instance of an entity type.</answer>
+    </question-type>
+    <question-type>
+        <question>What should be avoided when dealing with attributes?</question>
+        <answer>- Avoid attributes that could have varied number of values.
+- Avoid attributes that could be null.
+- Avoid duplicate attributes.</answer>
+    </question-type>
+    <question-type>
+        <question>What are the two ways an entity can participate in a relationship, and what do they mean?</question>
+        <answer>1. Total Participation: the relationship must exist.
+2. Partial Participation: the relationship does not have to exist.</answer>
+    </question-type>
+    <question-type>
+        <question>Define the four types of keys.</question>
+        <answer>Super Key: a combination of attributes that uniquely identifies an tuple.
+Candidate Key: a minimal super key.
+Primary Key: a candidate key that is not null.
+Foreign Key: a primary key which references a primary key of another table.</answer>
+    </question-type>
+    <question-type>
+        <question>What does a Data Dictionary provide?</question>
+        <answer>The types of all the attributes.</answer>
+    </question-type>
+    <question-type>
+        <question>What does Normalization attempt to remove?</question>
+        <answer>- Null values
+- Repeated values
+- Redundancies
+- Incorrect values for complicated queries
+- Incomplete updates</answer>
+    </question-type>
+    <question-type>
+        <question>What are the requirements of decomposition?</question>
+        <answer>- Lossless
+- Non-additive</answer>
+    </question-type>
+    <question-type>
+        <question>What concept does 1st Normal Form to Boyce/Codd Normal Form deal with?</question>
+        <answer>Functional dependency.</answer>
+    </question-type>
+    <question-type>
+        <question>What defines 1st Normal Form?</question>
+        <answer>A relation schema is in 1st Normal Form if:
+    - it contains only atomic (simple, indivisible) values for its attributes.</answer>
+    </question-type>
+    <question-type>
+        <question>What is a problem with 1st Normal Form?</question>
+        <answer>Repetition.</answer>
+    </question-type>
+    <question-type>
+        <question>What is Functional Dependence (FD)?</question>
+        <answer>The dependency relationship between attributes.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the difference between Full Functional Dependence and Partial Functional Dependence?</question>
+        <answer>Full Functional Dependence requires the each part of the key to maintain the dependence, whereas Partial Functional Dependence will still hold with a subset of the key.</answer>
+    </question-type>
+    <question-type>
+        <question>What defines 2nd Normal Form?</question>
+        <answer>A relation schema is in 2nd Normal Form if:
+    - it is in 1st Normal Form
+    - each non-key attribute is fully functionally dependent on the primary key (or a candidate key).</answer>
+    </question-type>
+    <question-type>
+        <question>What defines 3rd Normal Form?</question>
+        <answer>A relation schema is in 3rd Normal Form if:
+    - it is in 2nd Normal Form
+    - each non-key attribute is non-transitively dependent on the primary key</answer>
+    </question-type>
+    <question-type>
+        <question>What are the goals of the Boyce/Codd Normal Form?</question>
+        <answer>- Lossless Joins
+- Dependence preservation</answer>
+    </question-type>
+    <question-type>
+        <question>What defines Boyce/Codd Normal Form?</question>
+        <answer>A relation schema is in Boyce/Codd Normal Form if:
+    - it is in 3rd Normal Form
+    - every non-trivial functional dependency is a dependency on a super key</answer>
+    </question-type>
+    <question-type>
+        <question>What does the Data Definition Language deal with in SQL?</question>
+        <answer>Creating, Dropping, and Altering the tables.</answer>
+    </question-type>
+    <question-type>
+        <question>What does the Data Manipulation Language deal with in SQL?</question>
+        <answer>Selection, Conditions, Functions, Constraints.</answer>
+    </question-type>
+    <question-type>
+        <question>Name 5 aggregate functions.</question>
+        <answer>Average, Sum, Count, Min, Max.</answer>
+    </question-type>
+    <question-type>
+        <question>Describe a view.</question>
+        <answer>A virtual table based on select statements.</answer>
+    </question-type>
+</questions>

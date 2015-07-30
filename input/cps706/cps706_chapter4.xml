@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>What does the networking layer achieve?</question>
+        <answer>It transports segments from sending to receiving hosts.</answer>
+    </question-type>
+    <question-type>
+        <question>What does the Networking layer do on the sending and receiving sides?</question>
+        <answer>On the sending side it encapsulates segments into datagrams.
+On the receiving side, it delivers segments to the Transport layer.</answer>
+    </question-type>
+    <question-type>
+        <question>Where does the network layer exist?</question>
+        <answer>In every host and router.</answer>
+    </question-type>
+    <question-type>
+        <question>What does the router do with IP datagrams?</question>
+        <answer>The router examines the header fields in all fo the IP datagrams passing through it.</answer>
+    </question-type>
+    <question-type>
+        <question>Define forwarding.</question>
+        <answer>Moving packets from router’s input to appropriate router output.</answer>
+    </question-type>
+    <question-type>
+        <question>Define routing.</question>
+        <answer>Determining which route packets will take from their source to destination using a routing algorithm.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the difference between what the routing algorithm and forwarding table do?</question>
+        <answer>The routing algorithm determines the end-end-path through the network whereas the forwarding table determines the local forwarding at the current router.</answer>
+    </question-type>
+</questions>
