@@ -1,0 +1,122 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>List common accounts for Assets.</question>
+        <answer>- Cash
+- Accounts Receivable
+- Prepaid Expense
+- Prepaid Insurance
+- Business License
+- Website Design</answer>
+    </question-type>
+    <question-type>
+        <question>List common accounts for Liabilities.</question>
+        <answer>- Accounts Payable
+- Unearned Revenue
+- Loan Payable</answer>
+    </question-type>
+    <question-type>
+        <question>List common accounts for Revenue.</question>
+        <answer>- Service Revenue
+- Sales Revenue</answer>
+    </question-type>
+    <question-type>
+        <question>List common accounts for Expenses.</question>
+        <answer>- Website Expenses
+- Advertising Expenses
+- Gas and Oil Expense
+- Rent Expenses</answer>
+    </question-type>
+    <question-type>
+        <question>List the 4 financial statements in the order in which there are produced.</question>
+        <answer>- Income Statement
+- Statement of Retained Earnings
+- Balance Sheet
+- Statement of Cash Flows</answer>
+    </question-type>
+    <question-type>
+        <question>List the 3 activities and define them.</question>
+        <answer>- Operating: activities used to earn revenue, and incur expenses that generate revenue.
+        - Investing: activities that involve purchasing and selling long lived assets.
+        - Financing: getting or repaying cash.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the general format of all financial statement title headers?</question>
+        <answer>- Company name
+- Statement name
+- Period of time covered (i.e. Period ending December 31, 2015)</answer>
+    </question-type>
+    <question-type>
+        <question>List the headers included on an Income Statement.</question>
+        <answer>- Revenues
+- Operating Expenses
+- Total operating expenses
+- Profit before income tax
+- Income tax expense
+- Profit</answer>
+    </question-type>
+    <question-type>
+        <question>How are Revenues and Operating Expenses ordered on an Income Statement?</question>
+        <answer>In order of decreasing magnitude.</answer>
+    </question-type>
+    <question-type>
+        <question>List the headers included on a Statement of Retained Earnings.</question>
+        <answer>- Opening retained earnings, date
+- Add Profit
+- Deduct Dividends
+- Closing retained earnings, date</answer>
+    </question-type>
+    <question-type>
+        <question>List the headers included on a Balance Sheet.</question>
+        <answer>- Assets
+- Current Assets
+- Total current Assets
+- Long Term Assets
+- Total Long Term Assets
+- Intangibles
+- Total Intangibles
+- Total Assets
+
+- Liabilities
+- Current Liabilities
+- Total Current Liabilities
+- Long Term Liabilities
+- Total Long Term Liabilities
+- Total Liabilities
+
+- Equity
+- Total Equity
+- Total Liabilities and Equity</answer>
+    </question-type>
+    <question-type>
+        <question>When are subtotals required for an Asset or Liability category of a Balance Sheet?</question>
+        <answer>When there is more than on item in the category.</answer>
+    </question-type>
+    <question-type>
+        <question>How are Assets ordered on a Balance Sheet?</question>
+        <answer>In order of decreasing liquidity.</answer>
+    </question-type>
+    <question-type>
+        <question>How are Liabilities ordered on a Balance Sheet?</question>
+        <answer>In order of increasing time frame.</answer>
+    </question-type>
+    <question-type>
+        <question>List the headers included on a Statement of Cash Flows.</question>
+        <answer>- Cash flows from operating activities
+- Cash receipts from customers
+- Cash payments to suppliers
+- Cash provided by operating activities
+
+- Cash flows from investing activities
+- Purchase of intangibles
+- Cash used in investing activities
+
+- Cash flows from financing activities
+- Capital contributions by owners
+- Cash received from debt
+- Cash provided by financing activities
+- Net inflow of cash
+- Beginning cash, date
+- Ending cash, date</answer>
+    </question-type>
+</questions>

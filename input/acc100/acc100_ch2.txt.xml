@@ -1,0 +1,69 @@
+<?xml version='1.0'?>
+<questions>
+    <question-type>
+        <question>What is the difference between data and information?</question>
+        <answer>Data is the raw numbers, whereas information is some structured formation or interpretation of the raw data to provide meaning.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the purpose of the financial reporting elements?</question>
+        <answer>To provide external stakeholders with the information they need to make decisions.</answer>
+    </question-type>
+    <question-type>
+        <question>List the 5 financial reporting elements.</question>
+        <answer>- Assets
+- Liabilities
+- Equity
+- Revenue
+- Expense</answer>
+    </question-type>
+    <question-type>
+        <question>List the 3 characteristics of an asset.</question>
+        <answer>- It is owned
+- It has future benefit
+- It exists due to past events</answer>
+    </question-type>
+    <question-type>
+        <question>List the 3 characteristics of a liability.</question>
+        <answer>- It is owed to a third party
+        - It is to be settled in the future
+        - It is due to past events</answer>
+    </question-type>
+    <question-type>
+        <question>What is the definition of Equity?</question>
+        <answer>Equity is the wealth due to the owners of the company, separated into the owner’s capital and retained profit/earnings</answer>
+    </question-type>
+    <question-type>
+        <question>What is the basic accounting equation.</question>
+        <answer>Assets = Liabilities + Equity</answer>
+    </question-type>
+    <question-type>
+        <question>How is Equity calculated?</question>
+        <answer>Owner's Capital + Retained Earnings</answer>
+    </question-type>
+    <question-type>
+        <question>How are Retained Earnings calculated?</question>
+        <answer>Retained Earnings = Profit - Dividends</answer>
+    </question-type>
+    <question-type>
+        <question>How is Profit calculated?</question>
+        <answer>Profit = Revenues - Expenses</answer>
+    </question-type>
+    <question-type>
+        <question>What is the expanded accounting equation?</question>
+        <answer>Assets = Liabilities + Owner's Capital + Revenues - Expenses - Dividends</answer>
+    </question-type>
+    <question-type>
+        <question>List the Critical Questions.</question>
+        <answer>- What did the business get?
+- What did the business give away?</answer>
+    </question-type>
+    <question-type>
+        <question>List the Enhancing Questions.</question>
+        <answer>- What did the business earn? (Revenue)
+- What did the business use, consume, or incur? (Expense)
+- What does the business owe? (Liability or Owner's Capital)</answer>
+    </question-type>
+    <question-type>
+
+    </question-type>
+</questions>

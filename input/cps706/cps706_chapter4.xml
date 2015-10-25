@@ -29,4 +29,79 @@ On the receiving side, it delivers segments to the Transport layer.</answer>
         <question>What is the difference between what the routing algorithm and forwarding table do?</question>
         <answer>The routing algorithm determines the end-end-path through the network whereas the forwarding table determines the local forwarding at the current router.</answer>
     </question-type>
+    <question-type>
+        <question>What must happen before datagrams can flow?</question>
+        <answer>Before datagrams can flow, two end hosts and intervening routers establish virtual connection.</answer>
+    </question-type>
+    <question-type>
+        <question>What is the difference between network and the transport layer connection service?</question>
+        <answer>The network layer connection service is between two hosts (may also involve intervening routers in case of virtual circuits), whereas the transport layer connection service is between two processes.</answer>
+    </question-type>
+    <question-type>
+        <question>What are some example services for individual datagrams?</question>
+        <answer>- guaranteed delivery
+- guaranteed delivery with less than n msec delay</answer>
+    </question-type>
+    <question-type>
+        <question>What are some example services for a flow of datagrams?</question>
+        <answer>- in-order datagram delivery
+- guaranteed minimum bandwidth to flow
+- restrictions on changes in inter-packet spacing</answer>
+    </question-type>
+    <question-type>
+        <question>What does a datagram network provide?</question>
+        <answer>A datagram network provides network-layer connectionless service.</answer>
+    </question-type>
+    <question-type>
+        <question>What does a virtual-circuit network provide?</question>
+        <answer>A virtual-circuit network provides network-layer connection service.</answer>
+    </question-type>
+    <question-type>
+        <question>How do the network layer connection services differ from the TCP/UDP transport services?</question>
+        <answer>The network layer connection services are host-to-host, with no choice (what the network provides), and the implementation is int the network core.</answer>
+    </question-type>
+    <question-type>
+        <question>What does each packet carry in a virtual circuit?</question>
+        <answer>Each packet carries a virtual circuit identifier.</answer>
+    </question-type>
+    <question-type>
+        <question>What does every router on source-destination path maintain in a virtual network?</question>
+        <answer>Every router on source-destination path maintains a state for each passing connection.</answer>
+    </question-type>
+    <question-type>
+        <question>What dedicated resources can a virtual network use to provide predictable service?</question>
+        <answer>Link and router resources such as bandwidth and buffers can be allocated to the virtual network.</answer>
+    </question-type>
+    <question-type>
+        <question>What does a virtual network consist of?</question>
+        <answer>A virtual network consist of:
+    - a path from source to destination
+    - virtual circuit numbers, one number for each link along path
+    - entries in forwarding tables in routers along the path</answer>
+    </question-type>
+    <question-type>
+        <question>Since virtual circuit numbers can be changed on each link, where do the new virtual circuit numbers come from?</question>
+        <answer>New virtual circuit numbers comes from the forwarding table of the router.</answer>
+    </question-type>
+    <question-type>
+        <question>What are virtual circuit signalling protocols used for?</question>
+        <answer>Virtual circuit signalling protocols are used to setup, maintain, and teardown the connection.</answer>
+    </question-type>
+    <question-type>
+        <question>How are packets forwarded in a datagram network?</question>
+        <answer>Packets are forwarded using destination host address.</answer>
+    </question-type>
+    <question-type>
+        <question>How does the datagram forwarding table deal with the multitude of ip addresses?</question>
+        <answer>Rather than list rather than list individual destination address it lists a range of addresses (aggregate table entries).</answer>
+    </question-type>
+    <question-type>
+        <question>What is longest prefix matching?</question>
+        <answer>When looking for forwarding table entry for a given destination address, use the longest address prefix that matches the destination address.</answer>
+    </question-type>
+    <question-type>
+        <question>What are two key routing functions?</question>
+        <answer>- run routing algorithms/protocol (RIP, OSPF, BGP).
+- forwarding datagrams from incoming to outgoing links.</answer>
+    </question-type>
 </questions>
