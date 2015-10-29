@@ -11,22 +11,22 @@
     <question-type>
         <question>List the 5 financial reporting elements.</question>
         <answer>- Assets
-            - Liabilities
-            - Equity
-            - Revenue
-            - Expense</answer>
+- Liabilities
+- Equity
+- Revenue
+- Expense</answer>
     </question-type>
     <question-type>
         <question>List the 3 characteristics of an asset.</question>
         <answer>- It is owned
-            - It has future benefit
-            - It exists due to past events</answer>
+- It has future benefit
+- It exists due to past events</answer>
     </question-type>
     <question-type>
         <question>List the 3 characteristics of a liability.</question>
         <answer>- It is owed to a third party
-            - It is to be settled in the future
-            - It is due to past events</answer>
+- It is to be settled in the future
+- It is due to past events</answer>
     </question-type>
     <question-type>
         <question>What is the definition of Equity?</question>
@@ -55,13 +55,13 @@
     <question-type>
         <question>List the Critical Questions.</question>
         <answer>- What did the business get?
-            - What did the business give away?</answer>
+- What did the business give away?</answer>
     </question-type>
     <question-type>
         <question>List the Enhancing Questions.</question>
         <answer>- What did the business earn? (Revenue)
-            - What did the business use, consume, or incur? (Expense)
-            - What does the business owe? (Liability or Owner's Capital)</answer>
+- What did the business use, consume, or incur? (Expense)
+- What does the business owe? (Liability or Owner's Capital)</answer>
     </question-type>
     <question-type>
 
